@@ -260,7 +260,12 @@ main #hero h1 span{
 
 /* Features Section Starts Here */
 
-
+#features{
+  padding: 20px !important;
+  margin: 10px;
+  border-radius:30px ;
+  background-color: aliceblue;
+}
 #features .card h3{
   font-size: 1.5rem;
   font-weight: bold
@@ -271,5 +276,11 @@ main #hero h1 span{
   background-color:#ff003c !important ;
   color: white !important;
   cursor: pointer;
+}
+
+#features h2{
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
 
