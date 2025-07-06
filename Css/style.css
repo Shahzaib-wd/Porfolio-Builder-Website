@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* navbar */
+
+nav {
+
+  z-index: 999;
+  background-color: transparent !important;
+  box-shadow: 0 0 7px #ff003c;
+  backdrop-filter: blur(5px);
+}
+nav ul{
+    align-items: center;
+}
+nav a{
+    color: #ffffff !important;
+    font-weight: bolder !important;
+    text-shadow: #ff003c 1px 0 10px;
+}
+nav a:hover{
+    transition: all 0.3s ease-in-out;
+    color: #ff003c !important;
+}
+
+nav .navbar-toggler{
+  background-color: #ff003c;
+  color: white;
+}
+/* From Uiverse.io */ 
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: white 1px solid;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 0 0 2px #ff003c;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 170px;
+  height: 40px;
+  text-shadow: #ff003c 1px 0 10px;
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: #ff003c;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #ff003c;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #212121;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #ff003c;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+
+/* navbar */
+
+
+
+
+/* hero section Starts here */
+
+main #hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/images/hero-img.jpg);
+    filter: brightness(0.8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    color: aliceblue;
+    padding: 25%;
+    border-radius: 0 0 30px 30px;
+}
+
+main #hero h1{
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: #ff003c 1px 0 10px;
+    line-height: 100px;
+}
+main #hero h1 span{
+  background-color: #ff003c;
+  border-radius: 10px;
+
+}
+
+
+/* From Uiverse.io by vikiWayne */ 
+#hero .button {
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+}
+#hero .button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  background-color: #ff003c;
+  box-shadow: 4px 5px 17px -4px #ff003c;
+  border: none;
+}
+
+#hero .button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ff003c;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+#hero .button:hover::before {
+  width: 250%;
+}
+
+/* Hero Section Ends Here */
+
+
+
+
+/* Purpose Section Strts Here */
+
+#purpose{
+
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#purpose .text{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 50vh;
+}
+
+#purpose .text h2{
+  font-size: 3rem;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 70px;
+}
+#purpose .text h2 span{
+  background-color: #ff003c;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#purpose .text h3{
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #ff003c;
+  padding: 10px;
+  border-radius: 10px;
+}
+#purpose .text a{
+  text-decoration: none;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+
+/* Purpose Section Ends Here */
+
+
+
+
+/* Features Section Starts Here */
+
+
+#features .card h3{
+  font-size: 1.5rem;
+  font-weight: bold
+}
+#features .card:hover{
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 20px #ff003c !important;
+  background-color:#ff003c !important ;
+  color: white !important;
+  cursor: pointer;
+}
+
