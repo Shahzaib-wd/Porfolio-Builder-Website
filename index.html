@@ -1,100 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vizume - Portfolio Builder</title>
-    <link rel="stylesheet" href="Css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vizume - Portfolio Builder</title>
+  <link rel="stylesheet" href="Css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- navbar Starts here -->
-    
-<header>
-<!-- ✅ Navbar HTML -->
-<nav class="navbar navbar-expand-lg fixed-top glass-navbar" data-aos="fade-down" data-aos-delay="700">
-  <div class="container-fluid">
+  <!-- navbar Starts here -->
 
-    <!-- 🔵 Logo -->
-    <a class="navbar-brand text-white fw-bold" href="#">TS Builder</a>
+  <header>
+    <!-- ✅ Navbar HTML -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-navbar" data-aos="fade-down" data-aos-delay="700">
+      <div class="container-fluid">
 
-    <!-- ☰ Toggle -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- 🔵 Logo -->
+        <a class="navbar-brand text-white fw-bold" href="#"><img src="images/logo.png" height="40" width="150px" alt=""></a>
 
-    <!-- 🔽 Collapsible Content -->
-    <div class="collapse navbar-collapse" id="mainNavbar">
+        <!-- ☰ Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- 🔻 Center Links -->
-      <ul class="navbar-nav w-100 justify-content-center text-center mt-3 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active text-white" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#features">How it works</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#preview-showcase">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#testimonials">Reviews</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="portfolio.html">Build Now</a>
-        </li>
-      </ul>
+        <!-- 🔽 Collapsible Content -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
 
-      <!-- 🔸 Right Button -->
-      <div class="d-flex ms-lg-auto justify-content-center mt-3 mt-lg-0">
-<!-- From Uiverse.io by gharsh11032000 --> 
-<button class="animated-button">
-  <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-    ></path>
-  </svg>
-  <span class="text">Contact us</span>
-  <span class="circle"></span>
-  <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-    ></path>
-  </svg>
-</button>
+          <!-- 🔻 Center Links -->
+          <ul class="navbar-nav w-100 justify-content-center text-center mt-3 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#features">How it works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#preview-showcase">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#testimonials">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html">Contact us</a>
+            </li>
+          </ul>
+
+          <!-- 🔸 Right Button -->
+          <div class="d-flex ms-lg-auto justify-content-center mt-3 mt-lg-0">
+            <!-- From Uiverse.io by gharsh11032000 -->
+             <a href="buildnow.html" style="text-decoration: none;">
+            <button class="animated-button">
+              <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+              </svg>
+              <span class="text">Build Now</span>
+              <span class="circle"></span>
+              <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+              </svg>
+            </button>
+            </a>
+          </div>
+
+        </div>
       </div>
-
-    </div>
-  </div>
-</nav>
+    </nav>
 
 
 
 
     <!-- navbar Ends here -->
 
-</header>
+  </header>
 
 
-    <!-- Main Content Starts Here -->
+  <!-- Main Content Starts Here -->
 
-<main>
+  <main>
 
     <!-- Hero Section Starts Here -->
 
     <section id="hero" class="d-flex justify-content-center align-content-center">
-        <div  class="text text-center">
+
+      <video autoplay muted loop playsinline>
+        <source  src="BG/bg3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="text text-center">
         <h1 data-aos="fade-down" data-aos-delay="800"><span>Branding</span> That You Need <span>Indeed</span></h1>
-        <p data-aos="fade-in" data-aos-delay="900">Elevate Your Brand With Custom Identity And Custom design. Shocase Your Story Through Bold Visuals And Strategic Designs Solution.</p>
+        <p data-aos="fade-in" data-aos-delay="900">Elevate Your Brand With Custom Identity And Custom design. Shocase
+          Your Story Through Bold Visuals And Strategic Designs Solution.</p>
 
-       <a href="portfolio.html"><button class="btn btn-primary button" data-aos="fade-down" data-aos-delay="1000">Get Started</button></a> 
+        <a href="portfolio.html"><button class="btn btn-primary button" data-aos="fade-down" data-aos-delay="1000">Get
+            Started</button></a>
 
-        </div>
+      </div>
 
     </section>
 
@@ -106,264 +122,280 @@
     <!-- Prupose section Starts Here -->
 
     <section id="purpose" data-aos="fade-down" data-aos-delay="300">
-
-      <div class="text">
-      <h2 data-aos="fade-down" data-aos-delay="500">Dont know how to <span>CODE</span> ?</h2>
-      <h3 data-aos="fade-down" data-aos-delay="600">We Got You</h3>
-      <a class="text-black" href=""><p data-aos="fade-in" data-aos-delay="700">Scroll Down <i class="fa-solid fa-arrow-down"></i></p></a>
-      </div>
       
+      <div class="text">
+        <h2 data-aos="fade-down" data-aos-delay="500">Dont know how to <span>CODE</span> ?</h2>
+        <h3 data-aos="fade-down" data-aos-delay="600">We Got You</h3>
+        <a class="text-black" href="">
+          <p data-aos="fade-in" data-aos-delay="700">Scroll Down <i class="fa-solid fa-arrow-down"></i></p>
+        </a>
+      </div>
+
 
     </section>
 
-        <!-- Prupose section Ends Here -->
+    <!-- Prupose section Ends Here -->
 
 
 
-        <!-- scetion Feature Starts Here -->
+    <!-- scetion Feature Starts Here -->
 
-<section data-aos="fade-down" data-aos-delay="500" id="features" style="padding: 2rem;">
-  <h2 style="text-align: center; color: #111; margin-bottom: 2rem;">How It Works</h2>
+    <section  data-aos="fade-down" data-aos-delay="500" id="features" style="padding: 2rem;">
+      <h2>How It Works</h2>
 
-  <div class="cards" data-aos="fade-down" data-aos-delay="1000" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-    <div class="card" style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-      <h3>📝 Easy Form Input</h3>
-      <p>Just fill in your details — no coding skills needed.</p>
-    </div>
+      <div class="cards" data-aos="fade-down" data-aos-delay="1000"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+        <div class="card"
+          style="background: transparent; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+          <h3>📝 Easy Form Input</h3>
+          <p>Just fill in your details — no coding skills needed.</p>
+        </div>
 
-    <div class="card" data-aos="fade-down" data-aos-delay="1100" style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-      <h3>⚡ Live Preview</h3>
-      <p>Instantly see how your portfolio looks as you type.</p>
-    </div>
+        <div class="card" data-aos="fade-down" data-aos-delay="1100"
+          style="background: transparent; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+          <h3>⚡ Live Preview</h3>
+          <p>Instantly see how your portfolio looks as you type.</p>
+        </div>
 
-    <div class="card" data-aos="fade-down" data-aos-delay="1200" style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-      <h3>📄 PDF Ready</h3>
-      <p>Download or print your portfolio with one click.</p>
-    </div>
+        <div class="card" data-aos="fade-down" data-aos-delay="1200"
+          style="background: transparent; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+          <h3>📄 PDF Ready</h3>
+          <p>Download or print your portfolio with one click.</p>
+        </div>
 
-    <div class="card" data-aos="fade-down" data-aos-delay="1300" style="background: #fff; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-      <h3>📱 Fully Responsive</h3>
-      <p>Works great on desktop, tablet and mobile screens.</p>
-    </div>
-  </div>
-</section>
-
-        <!-- scetion Feature Ends Here -->
-
-
-
-        <!-- preview section Stars Here -->
-
-       <section id="preview-showcase" data-aos="fade-down" data-aos-delay="700">
-  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #111;">Our Projects</h2>
-
-  <div class="preview-gallery">
-    <div class="preview-card">
-      <img src="images/sample1.jpg" alt="Classic Layout">
-      <h3>Classic Layout</h3>
-      <p>A clean and minimalistic portfolio design suitable for all devs.</p>
-    </div>
-
-    <div class="preview-card">
-      <img src="images/sample2.jpg" alt="Dark Theme">
-      <h3>Dark Theme</h3>
-      <p>Sleek dark UI for night-mode lovers and modern dev vibes.</p>
-    </div>
-
-    <div class="preview-card">
-      <img src="images/sample3.jpg" alt="One Page Resume">
-      <h3>One Page Resume</h3>
-      <p>Professional, single-page layout great for job applications.</p>
-    </div>
-
-    <div class="preview-card">
-      <img src="images/sample4.jpg" alt="Creative Style">
-      <h3>Creative Style</h3>
-      <p>Colorful, animated and bold look for designers and creators.</p>
-    </div>
-
-    <div class="preview-card">
-      <img src="images/sample5.jpg" alt="Business Card Layout">
-      <h3>Business Card</h3>
-      <p>Compact, contact-focused layout — perfect for networking events.</p>
-    </div>
-
-    <div class="preview-card">
-      <img src="images/sample6.jpg" alt="Multi-Section Layout">
-      <h3>Multi-Section Layout</h3>
-      <p>Includes About, Projects, Skills, and Contact — all in one.</p>
-    </div>
-  </div>
-</section>
-
-
-        <!-- preview section Ends Here -->
-
-
-
-
-        <!-- Reviews section Starts Here -->
-
-
-        <section id="testimonials" data-aos="fade-down" data-aos-delay="300">
-  <h2 class="section-title">💬 What Users Say</h2>
-
-  <div class="testimonials-grid">
-
-    <div class="testimonial-card" data-aos="fade-down" data-aos-delay="300">
-      <div class="user-img">
-      <img src="images/user1.jpg" alt="Areeba">
-       </div>
-      <p>“This tool helped me build a stunning portfolio in 5 minutes. Got my first internship!”</p>
-      <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
+        <div class="card" data-aos="fade-down" data-aos-delay="1300"
+          style="background: transparent; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+          <h3>📱 Fully Responsive</h3>
+          <p>Works great on desktop, tablet and mobile screens.</p>
+        </div>
       </div>
-      <h4>– Areeba (Frontend Dev)</h4>
-    </div>
+    </section>
 
-    <div class="testimonial-card" data-aos="fade-down" data-aos-delay="400">
-        <div class="user-img">
-    <img src="images/user2.jpg" alt="Daniyal">
-  </div>
-      <p>“No signup, no hassle. Just filled a form and boom — live resume ready!”</p>
-      <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
+    <!-- scetion Feature Ends Here -->
+
+
+
+    <!-- preview section Stars Here -->
+
+    <section id="preview-showcase" data-aos="fade-down" data-aos-delay="700">
+      <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; color: white;">Our Projects</h2>
+
+      <div class="preview-gallery" data-aos="fade-in" data-aos-delay="400">
+        <div class="preview-card">
+          <img src="images/sample1.jpg" alt="Classic Layout">
+          <h3>Classic Layout</h3>
+          <p>A clean and minimalistic portfolio design suitable for all devs.</p>
+        </div>
+
+        <div class="preview-card" data-aos="fade-in" data-aos-delay="500">
+          <img src="images/sample2.jpg" alt="Dark Theme">
+          <h3>Dark Theme</h3>
+          <p>Sleek dark UI for night-mode lovers and modern dev vibes.</p>
+        </div>
+
+        <div class="preview-card" data-aos="fade-in" data-aos-delay="600">
+          <img src="images/sample3.jpg" alt="One Page Resume">
+          <h3>One Page Resume</h3>
+          <p>Professional, single-page layout great for job applications.</p>
+        </div>
+
+        <div class="preview-card" data-aos="fade-in" data-aos-delay="700">
+          <img src="images/sample4.jpg" alt="Creative Style">
+          <h3>Creative Style</h3>
+          <p>Colorful, animated and bold look for designers and creators.</p>
+        </div>
+
+        <div class="preview-card" data-aos="fade-in" data-aos-delay="800">
+          <img src="images/sample5.jpg" alt="Business Card Layout">
+          <h3>Business Card</h3>
+          <p>Compact, contact-focused layout — perfect for networking events.</p>
+        </div>
+
+        <div class="preview-card" data-aos="fade-in" data-aos-delay="900">
+          <img src="images/sample6.jpg" alt="Multi-Section Layout">
+          <h3>Multi-Section Layout</h3>
+          <p>Includes About, Projects, Skills, and Contact — all in one.</p>
+        </div>
       </div>
-      <h4>– Daniyal (UI Designer)</h4>
-    </div>
+    </section>
 
-    <div class="testimonial-card" data-aos="fade-down" data-aos-delay="500">
-        <div class="user-img">
-    <img src="images/user3.jpg" alt="Zoya">
-  </div>
-      <p>“Finally something I could use without knowing React. Super beginner-friendly.”</p>
-      <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
+
+    <!-- preview section Ends Here -->
+
+
+
+
+    <!-- Reviews section Starts Here -->
+
+
+    <section class="text-light" id="testimonials" data-aos="fade-down" data-aos-delay="300">
+      <h2 class="section-title text-light">💬 What Users Say</h2>
+                    <video autoplay muted loop playsinline>
+        <source  src="BG/bg4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="testimonials-grid">
+
+
+        <div class="testimonial-card text-light" data-aos="fade-down" data-aos-delay="300">
+          <div class="user-img">
+            <img src="images/user1.jpg" alt="Areeba">
+          </div>
+          <p>“This tool helped me build a stunning portfolio in 5 minutes. Got my first internship!”</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>– Areeba (Frontend Dev)</h4>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-down" data-aos-delay="400">
+          <div class="user-img">
+            <img src="images/user2.jpg" alt="Daniyal">
+          </div>
+          <p>“No signup, no hassle. Just filled a form and boom — live resume ready!”</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <h4>– Daniyal (UI Designer)</h4>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-down" data-aos-delay="500">
+          <div class="user-img">
+            <img src="images/user3.jpg" alt="Zoya">
+          </div>
+          <p>“Finally something I could use without knowing React. Super beginner-friendly.”</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <h4>– Zoya (Student)</h4>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-down" data-aos-delay="600">
+          <div class="user-img">
+            <img src="images/user4.jpg" alt="Faizan">
+          </div>
+          <p>“I downloaded my portfolio PDF and sent it to recruiters — instant attention!”</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <h4>– Faizan (Job Seeker)</h4>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-down" data-aos-delay="700">
+          <div class="user-img">
+            <img src="images/user5.jpg" alt="Hamza">
+          </div>
+          <p>“I used the creative theme and added my own flair. Love how customizable it is.”</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>– Hamza (Freelancer)</h4>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-down" data-aos-delay="800">
+          <div class="user-img ">
+            <img src="images/user6.jpg" alt="Saba">
+          </div>
+          <p>“Used it for my bootcamp project presentation — teacher was impressed!”</p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <h4>– Saba (Coding Bootcamp)</h4>
+        </div>
+
       </div>
-      <h4>– Zoya (Student)</h4>
-    </div>
-
-    <div class="testimonial-card" data-aos="fade-down" data-aos-delay="600">
-        <div class="user-img">
-    <img src="images/user4.jpg" alt="Faizan">
-  </div>
-      <p>“I downloaded my portfolio PDF and sent it to recruiters — instant attention!”</p>
-      <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-        <i class="far fa-star"></i>
-      </div>
-      <h4>– Faizan (Job Seeker)</h4>
-    </div>
-
-    <div class="testimonial-card" data-aos="fade-down" data-aos-delay="700">
-        <div class="user-img">
-    <img src="images/user5.jpg" alt="Hamza">
-  </div>
-      <p>“I used the creative theme and added my own flair. Love how customizable it is.”</p>
-      <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-      </div>
-      <h4>– Hamza (Freelancer)</h4>
-    </div>
-
-    <div class="testimonial-card" data-aos="fade-down" data-aos-delay="800">
-        <div class="user-img ">
-    <img src="images/user6.jpg" alt="Saba">
-  </div>
-      <p>“Used it for my bootcamp project presentation — teacher was impressed!”</p>
-      <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-      </div>
-      <h4>– Saba (Coding Bootcamp)</h4>
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
-        <!-- Reviews section Ends Here -->
+    <!-- Reviews section Ends Here -->
 
 
-        <section" id="portfolio"  data-aos="fade-down" data-aos-delay="300">
-          <h1>Get Your Portfolio In Just 5 Minutes !</h1>
-          <a href="portfolio.html"><button class="btn btn-primary button">Get Now</button></a> 
-        </section>
+    <section" id="portfolio" data-aos="fade-down" data-aos-delay="300">
+          <video autoplay muted loop playsinline>
+        <source  src="BG/bg5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h1>Get Your Portfolio In Just 5 Minutes !</h1>
+      <a href="portfolio.html"><button class="btn btn-primary button">Get Now</button></a>
+      </section>
 
 
 
 
-</main>
-    
+  </main>
 
-    <!-- Main Content Starts Here -->
+
+  <!-- Main Content Starts Here -->
 
 
 
 
 
 
-    <!-- Footer section Starts Here -->
+  <!-- Footer section Starts Here -->
 
 
 
 
   <footer id="main-footer">
-  <div class="footer-container">
+    <div class="footer-container">
 
-    <div class="footer-brand">
-      <h2>TS Portfolio Builder</h2>
-      <p>Build & share your personal portfolio in minutes.</p>
-    </div>
-
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#preview-showcase">Preview</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-social">
-      <h3>Connect</h3>
-      <div class="social-icons">
-        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <div class="footer-brand">
+        <a href="#"><img src="/images/logo.png" width="180" height="50" alt=""></a>
+        <p>Build & share your personal portfolio in minutes.</p>
       </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#preview-showcase">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+
     </div>
 
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2025 TS Portfolio Builder. All rights reserved.</p>
-  </div>
-</footer>
+    <div class="footer-bottom">
+      <p>© 2025 TS Portfolio Builder. All rights reserved.</p>
+    </div>
+  </footer>
 
 
 
@@ -374,18 +406,21 @@
 
 
 
-    <!-- Footer section Ends Here -->
+  <!-- Footer section Ends Here -->
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="Main Files/script.js">
-    </script>
-    <script>
-              AOS.init();
+  <script src="Main Files/script.js">
+  </script>
+  <script>
+    AOS.init();
 
-    </script>
+  </script>
 </body>
+
 </html>
