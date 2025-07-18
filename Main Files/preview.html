@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="preview.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-warning" href="#">AlphaDev<span class="text-primary">.</span></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="img">
+            <img src="/images/sample6.jpg" width="200" height="200" id="profile" alt="profile" />
+        </div>
+
+        <div class="bio">
+            <h1>I AM <span id="name"></span></h1>
+            <h2>A PASSIONATE <span id="bio">web developer</span></h2>
+            <p >
+                Passionate and curious tech enthusiast dedicated to building creative, user-friendly, and impactful digital experiences.
+
+            </p>
+            <div class="action">
+                <div class="icons">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                </div>
+                <div class="cta">
+                    <button class="btn btn-primary">Hire Me</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const profileImg = document.getElementById("profile");
+    const nameSpan = document.getElementById("name");
+    const bioSpan = document.getElementById("bio");
+
+    const imageData = localStorage.getItem("profileImage");
+    const name = localStorage.getItem("userName");
+    const bio = localStorage.getItem("userBio");
+    const theme = localStorage.getItem("userTheme");
+
+    if (imageData) {
+      profileImg.src = imageData;
+    }
+    nameSpan.textContent = name || "Anonymous";
+    bioSpan.textContent = bio || "Web Developer";
+
+    if (theme === "dark") {
+      document.body.style.background = "#111";
+      document.body.style.color = "#fff";
+    } else {
+      document.body.style.background = "#f8f9fa";
+      document.body.style.color = "#111";
+    }
+  });
+</script>
+
+</body>
+
+</html>
