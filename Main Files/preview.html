@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title></title>
     <link rel="stylesheet" href="preview.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Poppins:wght@300;400;500&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top shadow-sm">
             <div class="container">
-                <a class="navbar-brand fw-bold text-warning" href="#">AlphaDev<span class="text-primary">.</span></a>
+                <a class="navbar-brand fw-bold " id="brandName" href="#">Portfolio<span class="text-light">.</span></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                     aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,12 +54,9 @@
         </div>
 
         <div class="bio">
-            <h1>I AM <span id="name"></span></h1>
-            <h2>A PASSIONATE <span id="bio">web developer</span></h2>
-            <p >
-                Passionate and curious tech enthusiast dedicated to building creative, user-friendly, and impactful digital experiences.
+            <h1>I am <span id="name"></span></h1>
+            <h2>A Passionate <span id="bio"></span></h2>
 
-            </p>
             <div class="action">
                 <div class="icons">
                     <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
@@ -73,32 +71,50 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     const profileImg = document.getElementById("profile");
-    const nameSpan = document.getElementById("name");
-    const bioSpan = document.getElementById("bio");
-
+    const name = localStorage.getItem("userName") || "Anonymous";
+    const bio = localStorage.getItem("userBio") || "Web Developer";
     const imageData = localStorage.getItem("profileImage");
-    const name = localStorage.getItem("userName");
-    const bio = localStorage.getItem("userBio");
     const theme = localStorage.getItem("userTheme");
+
+    document.title = `Vizume | ${name} Portfolio`;
 
     if (imageData) {
       profileImg.src = imageData;
     }
-    nameSpan.textContent = name || "Anonymous";
-    bioSpan.textContent = bio || "Web Developer";
 
     if (theme === "dark") {
-      document.body.style.background = "#111";
-      document.body.style.color = "#fff";
+      document.body.style.background = " linear-gradient(to right, #0f0c29, #302b63, #24243e)";
+      document.body.style.color = "aliceblue";
     } else {
-      document.body.style.background = "#f8f9fa";
+      document.body.style.background = "aliceblue";
       document.body.style.color = "#111";
     }
+
+    // 🔥 Typed.js for Name
+    new Typed('#name', {
+      strings: [name],
+      typeSpeed: 70,
+      backSpeed: 40,
+      showCursor: true,
+      loop: false,
+    });
+
+    // 🔥 Typed.js for Bio
+    new Typed('#bio', {
+      strings: [bio],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: false,
+      showCursor: true,
+    });
   });
 </script>
+
 
 </body>
 
