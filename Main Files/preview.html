@@ -1,121 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="preview.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Poppins:wght@300;400;500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Portfolio | Professional Designer & Developer</title>
+    <link rel="stylesheet" href="preview.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top shadow-sm">
-            <div class="container">
-                <a class="navbar-brand fw-bold " id="brandName" href="#">Portfolio<span class="text-light">.</span></a>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">Portfolio.</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav ms-auto text-center">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#skills">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-subtitle">Hi, I'm a</h2>
+            <h1 class="hero-title"> <span id="name" class="highlight"></span></h1>
+            <p class="hero-description">
+              A passionate <span id="bio"></span> crafting innovative digital solutions, mastering tools across domains, and dedicated to learning, building, and solving real-world challenges.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
             </div>
-        </nav>
-    </header>
-
-    <section id="hero">
-        <div class="img">
-            <img src="/images/sample6.jpg" width="200" height="200" id="profile" alt="profile" />
         </div>
 
-        <div class="bio">
-            <h1>I am <span id="name"></span></h1>
-            <h2>A Passionate <span id="bio"></span></h2>
+    </section>
 
-            <div class="action">
-                <div class="icons">
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Dribbble"><i class="fab fa-dribbble"></i></a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Get to know me better</p>
+        </div>
+        <div class="about-content">
+             <div class="about-text">
+                <h3>Who Am I?</h3>
+                <p class="text-center">
+                    I'm a passionate <span id="bioo"></span> with over <span id="exp"></span> years of experience creating 
+                    digital experiences that users love. My approach combines technical expertise with 
+                    creative vision to deliver solutions that are as beautiful as they are functional.
+                </p>
+            </div>
+            <div class="about-image">
+                <img id="profile" src="https://placehold.co/500x600" alt="Professional portrait of a web developer smiling, wearing casual modern clothing in a studio setting" />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-header">
+            <h2 class="section-title">My Skills</h2>
+            <p class="section-subtitle">Technologies I work with</p>
+        </div>
+        <div class="skills-container">
+            <div class="skill-card" style="--order: 0;">
+                <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                <h3 class="skill-name">HTML5</h3>
+                <p>Semantic markup and accessibility best practices</p>
+                <div class="skill-progress">
+                    <div class="progress-bar" style="width: 95%"></div>
                 </div>
-                <div class="cta">
-                    <button class="btn btn-primary">Hire Me</button>
+            </div>
+            <div class="skill-card" style="--order: 1;">
+                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                <h3 class="skill-name">CSS3</h3>
+                <p>Modern layout techniques and responsive design</p>
+                <div class="skill-progress">
+                    <div class="progress-bar" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-card" style="--order: 2;">
+                <div class="skill-icon"><i class="fab fa-js"></i></div>
+                <h3 class="skill-name">JavaScript</h3>
+                <p>ES6+, functional programming, and modern frameworks</p>
+                <div class="skill-progress">
+                    <div class="progress-bar" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-card" style="--order: 3;">
+                <div class="skill-icon"><i class="fab fa-react"></i></div>
+                <h3 class="skill-name">React</h3>
+                <p>Component-based architecture and state management</p>
+                <div class="skill-progress">
+                    <div class="progress-bar" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="skill-card" style="--order: 4;">
+                <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                <h3 class="skill-name">Node.js</h3>
+                <p>Server-side JavaScript and API development</p>
+                <div class="skill-progress">
+                    <div class="progress-bar" style="width: 75%"></div>
+                </div>
+            </div>
+            <div class="skill-card" style="--order: 5;">
+                <div class="skill-icon"><i class="fas fa-database"></i></div>
+                <h3 class="skill-name">MongoDB</h3>
+                <p>NoSQL database design and optimization</p>
+                <div class="skill-progress">
+                    <div class="progress-bar" style="width: 70%"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-header">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">A selection of my recent work</p>
+        </div>
+        <div class="projects-container">
+            <div class="project-card" style="--order: 0;">
+                <div class="project-image">
+                    <img src="https://placehold.co/600x400" alt="Modern e-commerce website dashboard showing product listings and sales analytics" />
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Node.js</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">E-Commerce Dashboard</h3>
+                    <p class="project-description">
+                        A comprehensive e-commerce management system with real-time analytics, 
+                        inventory control, and customer management.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" class="project-link">Code <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" style="--order: 1;">
+                <div class="project-image">
+                    <img src="https://placehold.co/600x400" alt="Creative portfolio website design with dark theme and interactive elements" />
+                    <div class="project-tags">
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">GSAP</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-description">
+                        A visually striking portfolio with smooth animations and micro-interactions 
+                        to showcase creative work.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" class="project-link">Code <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" style="--order: 2;">
+                <div class="project-image">
+                    <img src="https://placehold.co/600x400" alt="Mobile app interface showing social media features and user profiles" />
+                    <div class="project-tags">
+                        <span class="project-tag">React Native</span>
+                        <span class="project-tag">Firebase</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Social Media App</h3>
+                    <p class="project-description">
+                        A mobile-first social platform with real-time chat, post sharing, 
+                        and community features.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" class="project-link">Code <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const profileImg = document.getElementById("profile");
-    const name = localStorage.getItem("userName") || "Anonymous";
-    const bio = localStorage.getItem("userBio") || "Web Developer";
-    const imageData = localStorage.getItem("profileImage");
-    const theme = localStorage.getItem("userTheme");
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-subtitle">Get in touch for projects or collaborations</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>
+                    I'm currently available for freelance work and would love to 
+                    discuss your project. Feel free to reach out via email or social media.
+                </p>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>hello@darkportfolio.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" required placeholder="Subject of your message">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" required placeholder="Write your message here"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    document.title = `Vizume | ${name} Portfolio`;
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo"><i class="fas fa-code"></i>DarkPortfolio</a>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Dribbble"><i class="fab fa-dribbble"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 DarkPortfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    if (imageData) {
-      profileImg.src = imageData;
-    }
-
-    if (theme === "dark") {
-      document.body.style.background = " linear-gradient(to right, #0f0c29, #302b63, #24243e)";
-      document.body.style.color = "aliceblue";
-    } else {
-      document.body.style.background = "aliceblue";
-      document.body.style.color = "#111";
-    }
-
-    // 🔥 Typed.js for Name
-    new Typed('#name', {
-      strings: [name],
-      typeSpeed: 70,
-      backSpeed: 40,
-      showCursor: true,
-      loop: false,
-    });
-
-    // 🔥 Typed.js for Bio
-    new Typed('#bio', {
-      strings: [bio],
-      typeSpeed: 70,
-      backSpeed: 40,
-      loop: false,
-      showCursor: true,
-    });
-  });
-</script>
-
+        <!-- JavaScript Link -->
+    <script src="preview.js"></script>
 
 </body>
-
 </html>

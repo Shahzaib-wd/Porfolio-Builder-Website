@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vizume | Contact Us</title>
+  <link rel="stylesheet" href="contact.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+  <header>
+    <!-- ✅ Navbar HTML -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-navbar" data-aos="fade-down" data-aos-delay="700">
+      <div class="container-fluid">
+
+        <!-- 🔵 Logo -->
+        <a class="navbar-brand text-white fw-bold" href="#"><img src="/images/logo.png" height="40" width="150px" alt=""></a>
+
+        <!-- ☰ Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 🔽 Collapsible Content -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+          <!-- 🔻 Center Links -->
+          <ul class="navbar-nav w-100 justify-content-center text-center mt-3 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#features">How it works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#preview-showcase">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#testimonials">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html">Contact us</a>
+            </li>
+          </ul>
+
+          <!-- 🔸 Right Button -->
+          <div class="d-flex ms-lg-auto justify-content-center mt-3 mt-lg-0">
+            <!-- From Uiverse.io by gharsh11032000 -->
+             <a href="/Main Files/buildnow.html" style="text-decoration: none;">
+            <button class="animated-button">
+              <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+              </svg>
+              <span class="text">Build Now</span>
+              <span class="circle"></span>
+              <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+              </svg>
+            </button>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    <!-- navbar Ends here -->
+
+  </header>
+
+  <!-- <div class="contact-heading"><h2 style="position: relative; bottom: 30px;"><strong>Get in Touch With Us</strong></h2></div> -->
+   <div class="contact-heading">
+  <h2 style="position: relative; bottom: 60px;">
+    <strong><span class="type-text"></span></strong>
+  </h2>
+</div>
+
+  <section id="Contactus">
+     <form class="contact-box" id="contactForm" novalidate>
+    <h2>Contact Us</h2>
+
+    <div class="input-container mt-5">
+      <input type="text" id="name" required />
+      <label for="name">Your Name</label>
+      <div class="error" id="nameError"></div>
+    </div>
+
+    <div class="input-container">
+      <input type="email" id="email" required />
+      <label for="email">Your Gmail</label>
+      <div class="error" id="emailError"></div>
+    </div>
+
+    <div class="input-container">
+      <input type="tel" id="phone" required />
+      <label for="phone">Your Phone Number</label>
+      <div class="error" id="phoneError"></div>
+    </div>
+
+    <div class="input-container">
+      <textarea id="message" rows="4" required></textarea>
+      <label for="message">Your Message</label>
+      <div class="error" id="messageError"></div>
+    </div>
+
+    <button type="submit">Send Message</button>
+  </form>
+<!-- Scroll to Top Button -->
+ <!-- <a href="https://wa.me/923181486463" class="whatsapp-float" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+<button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button> -->
+</section>
+  
+  <div id="customSuccessToast" class="toast-hide">
+    <i class="fas fa-check-circle" style="background-color: rgb(0, 176, 0);"></i>
+  Message sent successfully!
+</div>
+<section class="choose-section" id="chooseSection">
+  <h2 class="choose-heading">Why Choose Us?</h2>
+  <div class="choose-container">
+
+    <div class="choose-item">
+      <div class="icon-box">
+      <i class="fas fa-headset" style="color: #6c00ff;"></i>
+      </div>
+      <h3>Expert Support</h3>
+      <p>Always available to assist with professional guidance.</p>
+    </div>
+
+    <div class="choose-item">
+      <div class="icon-box">
+     <i class="fas fa-display" style="color: #6c00ff;"></i>
+      </div>
+      <h3>Responsive Design</h3>
+      <p>Looks perfect on all devices with fluid layout.</p>
+    </div>
+
+    <div class="choose-item">
+    <div class="icon-box">
+	  <i class="fas fa-layer-group" style="color: #6c00ff;"></i></div>
+    <h3>Sleek Interface</h3>
+    <p>Modern, fast, and clean experience for all users.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Project Section -->
+<div class="project-by" data-aos="fade-up">
+  
+  <h2 class="text-light fw-bolder">PROJECT BY</h2>
+  <div class="project-members">
+    
+    <!-- Member 1 -->
+    <div class="project-member">
+      <img src="/images/tayyab.JPG" alt="Tayyab" >
+      <p>Tayyab Siddiqui</p>
+      <span class="role">UI Designer</span>
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <q>"Design speaks louder."</q>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="project-member">
+      <img src="/images/shahzaib.jpg" alt="Friend" />
+      <p>Shahzaib Khan</p>
+      <span class="role">Frontened Dev</span>
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <q>"Code with passion."</q>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+    <div class="trust mb-5 mt-5">
+      🔒 Your information is 100% confidential and protected.
+    </div>
+  <!-- WhatsApp Button -->
+<!-- <a href="https://wa.me/923001234567" class="float-btn whatsapp-btn" target="_blank" title="Chat with us on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a> -->
+ <a href="https://wa.me/923181486463" class="float-btn whatsapp-btn" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
+
+
+ 
+  <footer id="main-footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <a href="#"><img src="/images/logo.png" width="180" height="50" alt=""></a>
+        <p>Build & share your personal portfolio in minutes.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#preview-showcase">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 TS Portfolio Builder. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+    
+<script src="contact.js"></script>
+<!-- animation cdn -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+  AOS.init({
+    duration: 1000,
+    once: false,
+    easing: 'ease-in-out',
+    delay: 100
+  });
+
+</script>
+
+
+
+
+
+</body>
+</html>
