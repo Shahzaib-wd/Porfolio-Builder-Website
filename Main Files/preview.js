@@ -222,11 +222,7 @@ else {
                 const subject = document.getElementById('subject').value;
                 const message = document.getElementById('message').value;
                 
-                // Form validation
-                if (!name || !email || !subject || !message) {
-                    alert('Please fill in all fields');
-                    return;
-                }
+                
                 
                 // Simulate form submission (in a real app, you would send this data to a server)
                 console.log({ name, email, subject, message });
