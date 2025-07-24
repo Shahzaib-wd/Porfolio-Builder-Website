@@ -9,7 +9,7 @@
     
     const reader = new FileReader();
     reader.onload = function () {
-      localStorage.setItem("userName", name);
+      localStorage.setItem("userName", name.toUpperCase());
       localStorage.setItem("userBio", bio);
       localStorage.setItem("profileImage", reader.result);
       localStorage.setItem("experience", experience);

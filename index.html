@@ -48,7 +48,7 @@
               <a class="nav-link text-white" href="#features">How it works</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#preview-showcase">Projects</a>
+              <a class="nav-link text-white" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#testimonials">Reviews</a>
@@ -178,7 +178,7 @@
 
     <!-- preview section Stars Here -->
 
-     <section class="template-carousel">
+     <section id="projects" class="template-carousel">
     <h2>EXPLORE VIZUME TEMPLATES</h2>
     <div class="carousel-container">
       <button class="prev">&#10094;</button>
@@ -322,7 +322,7 @@
 
     
       <div class="user-card">
-      <img src="images/student.avif" alt="">
+      <img src="https://cdn-icons-png.flaticon.com/512/5850/5850276.png" alt="">
 
         <h3>Students</h3>
         <p>Build your first professional portfolio for internships and projects — no coding needed.</p>
@@ -336,7 +336,7 @@
 
     
       <div class="user-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Job Seeker">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa2ZnfHiAr9760vAMdkEELxt0hh3QKU7Igaw&s" alt="Job Seeker">
         <h3>Job Seekers</h3>
         <p>Stand out from the crowd with a customized portfolio and resume link.</p>
       </div>
@@ -430,7 +430,8 @@
 
   <!-- Footer section Ends Here -->
 
-
+<!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
@@ -463,6 +464,20 @@
         track.style.transform = `translateX(-${index * slideWidth}px)`;
       }
     });
+
+
+      function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.onscroll = function () {
+  let scrollBtn = document.getElementById("scrollBtn");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
 
   </script>
 </body>

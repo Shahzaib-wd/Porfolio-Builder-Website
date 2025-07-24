@@ -9,9 +9,19 @@
     document.getElementById("bio").textContent = bio;
     document.getElementById("bioo").textContent = bio
     document.getElementById("exp").textContent = experience
+    const about = document.getElementById("about-me")
+    const heroP = document.getElementById("hero-p")
+    const footerNmae = document.getElementById("nameee")
+    const footerName = document.getElementById("nameeee")
+
 
 
     document.title = `Vizume | ${name}'s Portfolio`
+    const role = bio.trim().toLowerCase();
+    const heroPara = heroP
+    footerNmae.textContent = `${name}'s PORTFOLIO`
+    footerName.textContent = name
+
 
     // Set image if exists
     if (profileImage) {
@@ -19,6 +29,80 @@
     } else {
       document.getElementById("profile").src = "https://placehold.co/500x500"; // fallback image
     }
+
+
+
+
+
+if (role === "software engineer") {
+  about.textContent = `Experienced Software Engineer with ${experience}+ years of crafting high-performance software solutions that solve real-world problems and scale businesses.`;
+  heroPara.textContent = `Turning complex ideas into scalable, maintainable software that evolves with user needs.`;
+
+}
+else if (role === "web developer") {
+  about.textContent = `Creative Web Developer with ${experience}+ years of building sleek, responsive websites that combine functionality with modern UI/UX principles.`;
+    heroPara.textContent = `Transforming concepts into interactive, engaging websites users love to explore.`;
+
+}
+else if (bio === "web designer") {
+  about.textContent = `Web Designer with ${experience}+ years of crafting visually appealing, user-friendly designs that blend creativity with performance.`;
+    heroPara.textContent = "Designing sleek, functional, and high-converting web experiences with creativity and purpose.";
+
+}
+else if (role === "frontend developer") {
+  about.textContent = `Frontend Developer with ${experience}+ years of experience crafting stunning, user-focused interfaces with the latest web technologies.`;
+    heroPara.textContent = `Focused on creating immersive visuals and seamless user interactions across devices.`;
+
+}
+else if (role === "backend developer") {
+  about.textContent = `Backend Developer with ${experience}+ years of experience building secure, scalable systems and robust APIs for modern applications.`;
+  heroPara.textContent = `Architecting the logic and performance that powers reliable digital experiences.`;
+
+}
+else if (role === "full stack developer") {
+  about.textContent = `Full Stack Developer with ${experience}+ years of hands-on experience delivering complete web apps using both frontend and backend technologies.`;
+  heroPara.textContent = `Bridging frontend creativity and backend logic for end-to-end digital products.`;
+
+}
+else if (role === "ui/ux designer") {
+  about.textContent = `UI/UX Designer with ${experience}+ years of creating visually striking and user-centric designs that enhance usability and aesthetics.`;
+  heroPara.textContent = `Designing visually stunning and emotionally resonant user journeys.`;
+
+}
+else if (role === "mobile app developer") {
+  about.textContent = `Mobile App Developer with ${experience}+ years of experience building seamless, high-performance mobile applications for Android and iOS.`;
+    heroPara.textContent = `Building fluid, responsive mobile apps that perform flawlessly across platforms.`;
+
+}
+else if (role === "data scientist") {
+  about.textContent = `Data Scientist with ${experience}+ years of transforming data into actionable insights using ML, statistics, and data storytelling.`;
+  heroPara.textContent = `Extracting actionable insights from data to empower smart decisions.`;
+
+}
+else if (role === "ethical hacker") {
+  about.textContent = `Ethical Hacker with ${experience}+ years of experience identifying security flaws and strengthening systems through professional penetration testing.`;
+  heroPara.textContent = `Dedicated to fortifying digital systems through proactive ethical testing.`;
+
+}
+else if (role === "cloud engineer") {
+  about.textContent = `Cloud Engineer with ${experience}+ years of deploying and managing secure, scalable cloud infrastructures on AWS, Azure, and beyond.`;
+  heroPara.textContent = `Engineering scalable cloud environments that support modern business agility.`;
+
+}
+else if (role === "devops engineer") {
+  about.textContent = `DevOps Engineer with ${experience}+ years of experience streamlining development through CI/CD, automation, and infrastructure-as-code.`;
+  heroPara.textContent = `Streamlining deployments with automation, monitoring, and seamless CI/CD.`;
+
+}
+else if (role === "ai engineer") {
+  about.textContent = `AI Engineer with ${experience}+ years of crafting intelligent systems using NLP, deep learning, and real-world AI applications.`;
+  heroPara.textContent = `Crafting intelligent models that solve problems through data-driven learning.`;
+
+}
+else {
+  about.textContent = `Passionate ${bio} with ${experience}+ years of experience delivering impactful solutions driven by innovation, precision, and growth mindset.`;
+}
+
   });
 
 

@@ -730,6 +730,77 @@ section{
 
 
 
+
+
+
+/* Common Styles for Floating Buttons */
+.float-btn {
+  position: fixed;
+  right: 20px;
+  background-color: #6a0dad; /* Your purple theme */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  z-index: 1000;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  position: fixed;
+  
+  bottom: 70px;
+  right: 20px;
+  
+  background-color: #25D366;
+  border-radius: 50%;
+  padding: 12px;
+  z-index: 999;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-btn img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5d;
+}
+
+/* Scroll-to-Top Button */
+#scrollBtn {
+  position: fixed;
+  bottom: 5px; 
+  right: 20px;
+  z-index: 998;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: none;
+}
+
+#scrollBtn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+
+
 /* footer section starts Here  */
 
 
