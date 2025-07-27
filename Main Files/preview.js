@@ -3,9 +3,15 @@
     const bio = localStorage.getItem("userBio") || "a developer";
     const profileImage = localStorage.getItem("profileImage");
     const experience = localStorage.getItem("experience");
+    const email = localStorage.getItem("userEmail");
+    const pNumber = localStorage.getItem("userPhone");
+
+      
 
     // Settings
     document.getElementById("name").textContent = name;
+    document.getElementById("email").textContent = email;
+    document.getElementById("pnumber").textContent = pNumber;
     document.getElementById("bio").textContent = bio;
     document.getElementById("bioo").textContent = bio
     document.getElementById("exp").textContent = experience
@@ -13,6 +19,7 @@
     const heroP = document.getElementById("hero-p")
     const footerNmae = document.getElementById("nameee")
     const footerName = document.getElementById("nameeee")
+
 
 
 
@@ -29,7 +36,8 @@
     } else {
       document.getElementById("profile").src = "https://placehold.co/500x500"; // fallback image
     }
-
+    if (linkedinURL) document.getElementById("linkedin").href = linkedinURL;
+    if (githubURL) document.getElementById("github").href = githubURL;
 
 
 
@@ -113,7 +121,15 @@ else {
   const skillsContainer = document.querySelector(".skills-container");
 const userRole = localStorage.getItem("userBio")?.toLowerCase();
 
+
 const skillsMap = {
+  "software engineer": [
+  { icon: "fas fa-code", name: "Programming", desc: "Strong in core languages like Java, Python, C++ or JavaScript" },
+  { icon: "fas fa-sitemap", name: "System Design", desc: "Design scalable systems using architecture patterns and design principles" },
+  { icon: "fas fa-database", name: "Databases", desc: "Work with SQL (MySQL/PostgreSQL) & NoSQL (MongoDB/Firebase)" },
+  { icon: "fas fa-project-diagram", name: "Data Structures & Algorithms", desc: "Problem solving using efficient data structures and algorithms" }
+],
+
   "web designer": [
     { icon: "fas fa-palette", name: "UI Design", desc: "Clean, modern, and aesthetic interface design" },
     { icon: "fas fa-layer-group", name: "Figma/XD", desc: "High-fidelity wireframes and prototypes" },
@@ -214,6 +230,21 @@ renderSkillCards(userRole);
 
 
 const projectsData = {
+  "software engineer": [
+  {
+    title: "Hospital Management System",
+    description: "Developed a complete hospital management web app with patient records, doctor schedules, and billing system.",
+    tags: ["Java", "Spring Boot", "MySQL", "Thymeleaf"],
+    image: "https://www.inkthemes.com/wp-content/uploads/2019/03/Hospital-automanger-thumb-image11.png"
+  },
+  {
+    title: "Bug Tracking Tool",
+    description: "Built an issue tracking system like Jira with user roles, ticket statuses, and real-time notifications.",
+    tags: ["Python", "Django", "PostgreSQL", "WebSockets"],
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPqh_U8PhYjt8kjqmFppzCN2WxVouMmJEnJw&s"
+  }
+]
+,
   "web designer": [
     {
       title: "Creative Landing Page",
