@@ -1,21 +1,37 @@
   window.addEventListener("DOMContentLoaded", () => {
     const name = localStorage.getItem("userName") || "Your Name";
     const bio = localStorage.getItem("userBio") || "a developer";
+    const userAbout = localStorage.getItem("userAbout") || "";
     const profileImage = localStorage.getItem("profileImage");
-    const experience = localStorage.getItem("experience");
-    const email = localStorage.getItem("userEmail");
-    const pNumber = localStorage.getItem("userPhone");
-
-      
+    const experience = localStorage.getItem("experience") || "0";
+    const email = localStorage.getItem("userEmail") || "";
+    const pNumber = localStorage.getItem("userPhone") || "";
+    const location = localStorage.getItem("userLocation") || "";
+    const userSkills = JSON.parse(localStorage.getItem("userSkills") || "[]");
+    
+    // Social media links
+    const linkedin = localStorage.getItem("userLinkedin") || "";
+    const github = localStorage.getItem("userGithub") || "";
+    const twitter = localStorage.getItem("userTwitter") || "";
+    const portfolio = localStorage.getItem("userPortfolio") || "";
 
     // Settings
     document.getElementById("name").textContent = name;
-    document.getElementById("email").textContent = email;
-    document.getElementById("pnumber").textContent = pNumber;
+    if (document.getElementById("email")) document.getElementById("email").textContent = email;
+    if (document.getElementById("pnumber")) document.getElementById("pnumber").textContent = pNumber;
     document.getElementById("bio").textContent = bio;
-    document.getElementById("bioo").textContent = bio
-    document.getElementById("exp").textContent = experience
-    const about = document.getElementById("about-me")
+    
+    // Update contact info in about section
+    document.getElementById("contact-email").textContent = email;
+    document.getElementById("contact-phone").textContent = pNumber;
+    document.getElementById("contact-location").textContent = location;
+    document.getElementById("contact-experience").textContent = `${experience} years experience`;
+    
+    // Update about description
+    if (userAbout) {
+        document.getElementById("about-description").textContent = userAbout;
+    }
+    
     const heroP = document.getElementById("hero-p")
     const footerNmae = document.getElementById("nameee")
     const footerName = document.getElementById("nameeee")
@@ -36,6 +52,12 @@
     } else {
       document.getElementById("profile").src = "https://placehold.co/500x500"; // fallback image
     }
+    
+    // Populate skills section
+    populateSkills(userSkills);
+    
+    // Populate social media links
+    populateSocialLinks(linkedin, github, twitter, portfolio);
 
 
 
@@ -560,6 +582,64 @@ if (userProfession) {
                 contactForm.reset();
             });
         }
+
+
+
+
+
+
+
+
+
+// Function to populate skills section
+function populateSkills(skills) {
+    const skillsContainer = document.getElementById('skills-container');
+    if (!skillsContainer || !skills || skills.length === 0) return;
+    
+    skillsContainer.innerHTML = '';
+    
+    skills.forEach(skill => {
+        const skillCard = document.createElement('div');
+        skillCard.className = 'skill-card';
+        skillCard.innerHTML = `
+            <div class="skill-info">
+                <span class="skill-name">${skill.name}</span>
+                <span class="skill-percentage">${skill.level}%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width: ${skill.level}%"></div>
+            </div>
+        `;
+        skillsContainer.appendChild(skillCard);
+    });
+}
+
+// Function to populate social media links
+function populateSocialLinks(linkedin, github, twitter, portfolio) {
+    const socialLinksContainer = document.getElementById('social-links');
+    if (!socialLinksContainer) return;
+    
+    let socialHTML = '<h4>Connect with me:</h4><div class="social-icons">';
+    
+    if (linkedin) {
+        socialHTML += `<a href="${linkedin}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>`;
+    }
+    if (github) {
+        socialHTML += `<a href="${github}" target="_blank" class="social-link"><i class="fab fa-github"></i></a>`;
+    }
+    if (twitter) {
+        socialHTML += `<a href="${twitter}" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>`;
+    }
+    if (portfolio) {
+        socialHTML += `<a href="${portfolio}" target="_blank" class="social-link"><i class="fas fa-globe"></i></a>`;
+    }
+    
+    socialHTML += '</div>';
+    
+    if (linkedin || github || twitter || portfolio) {
+        socialLinksContainer.innerHTML = socialHTML;
+    }
+}
 
 
 

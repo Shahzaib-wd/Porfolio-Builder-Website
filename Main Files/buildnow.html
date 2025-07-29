@@ -43,14 +43,69 @@
 
 
   <div class="mb-3">
-    <label for="experience">Experience</label>
-    <input type="number" class="form-control" id="experience" placeholder="e.g. 3" required>
+    <label for="experience" class="form-label">Years of Experience</label>
+    <input type="number" class="form-control" id="experience" placeholder="e.g. 3" min="0" max="50" required>
   </div>
 
+  <div class="mb-3">
+    <label for="aboutInput" class="form-label">About Me</label>
+    <textarea class="form-control" id="aboutInput" rows="4" placeholder="Tell us about yourself, your background, and what drives you..." required></textarea>
+  </div>
 
+  <div class="mb-3">
+    <label class="form-label">Skills (Add up to 6 skills)</label>
+    <div id="skillsContainer">
+      <div class="skill-input-group mb-2">
+        <div class="row">
+          <div class="col-7">
+            <input type="text" class="form-control skill-name" placeholder="e.g. JavaScript" required>
+          </div>
+          <div class="col-4">
+            <select class="form-select skill-level" required>
+              <option value="">Level</option>
+              <option value="90">Expert (90%)</option>
+              <option value="80">Advanced (80%)</option>
+              <option value="70">Intermediate (70%)</option>
+              <option value="50">Beginner (50%)</option>
+            </select>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-outline-danger btn-sm remove-skill" onclick="removeSkill(this)" style="display: none;">×</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary btn-sm" onclick="addSkill()">+ Add Skill</button>
+  </div>
 
+  <div class="mb-3">
+    <label class="form-label">Social Media Links</label>
+    <div class="row mb-2">
+      <div class="col-6">
+        <input type="url" class="form-control" id="linkedinInput" placeholder="LinkedIn URL">
+      </div>
+      <div class="col-6">
+        <input type="url" class="form-control" id="githubInput" placeholder="GitHub URL">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <input type="url" class="form-control" id="twitterInput" placeholder="Twitter URL">
+      </div>
+      <div class="col-6">
+        <input type="url" class="form-control" id="portfolioInput" placeholder="Personal Website URL">
+      </div>
+    </div>
+  </div>
 
-  <button type="submit" class="btn btn-primary">Save & Preview</button>
+  <div class="mb-3">
+    <label for="locationInput" class="form-label">Location</label>
+    <input type="text" class="form-control" id="locationInput" placeholder="e.g. New York, USA" required>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary btn-lg px-4">Save & Preview Portfolio</button>
+  </div>
 </form>
 
 
