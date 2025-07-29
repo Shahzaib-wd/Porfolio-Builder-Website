@@ -7,8 +7,7 @@
     const experience = document.getElementById("experience").value;
     const email = document.getElementById("emailInput").value.trim();
     const phoneNumber = document.getElementById("phoneInput").value.trim();
-    const linkedinValue = document.getElementById("linkedinInput").value;
-    const githubValue = document.getElementById("githubInput").value;
+
 
 
 

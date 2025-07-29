@@ -36,8 +36,7 @@
     } else {
       document.getElementById("profile").src = "https://placehold.co/500x500"; // fallback image
     }
-    if (linkedinURL) document.getElementById("linkedin").href = linkedinURL;
-    if (githubURL) document.getElementById("github").href = githubURL;
+
 
 
 
@@ -463,8 +462,6 @@ if (userProfession) {
 
 
 
-
-
    // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
@@ -563,3 +560,10 @@ if (userProfession) {
                 contactForm.reset();
             });
         }
+
+
+
+
+
+
+
