@@ -13,47 +13,87 @@
   <div class="card p-4 shadow-lg" style="max-width: 600px; margin: auto; border-radius: 15px;">
     <h2 class="text-center mb-4">Build Your Portfolio</h2>
 
-<form id="portfolioForm">
-
+  <form id="portfolioForm">
 
     <div class="mb-3">
-    <label for="profileInput" class="form-label">Profile Picture</label>
-    <input type="file" class="form-control" id="profileInput" accept="image/*" required>
-  </div>
+      <label for="profileInput" class="form-label">Profile Picture</label>
+      <input type="file" class="form-control" id="profileInput" accept="image/*" required>
+    </div>
 
-  <div class="mb-3">
-    <label for="name" class="form-label">Your Name</label>
-    <input type="text" class="form-control" id="nameInput" placeholder="Enter Your Full Name" required>
-  </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="nameInput" placeholder="Enter Your Full Name" required>
+    </div>
 
-<div class="mb-3">
-  <label for="emailInput" class="form-label">Email:</label>
-  <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
-</div>
+    <div class="mb-3">
+      <label for="emailInput" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+    </div>
 
-<div class="mb-3">
-  <label for="phoneInput" class="form-label">Phone:</label>
-  <input type="text" class="form-control" id="phoneInput" placeholder="Enter your phone number" required>
-</div>
+    <div class="mb-3">
+      <label for="phoneInput" class="form-label">Phone:</label>
+      <input type="text" class="form-control" id="phoneInput" placeholder="Enter your phone number" required>
+    </div>
 
-  <div class="mb-3">
-    <label for="bio" class="form-label">Your Profession</label>
-    <input type="text" class="form-control" id="bioInput" placeholder="e.g Software Engineer" required>
-  </div>
+    <div class="mb-3">
+      <label for="roleSelect" class="form-label">Select Your Profession</label>
+      <select class="form-control" id="roleSelect" required>
+        <option value="">-- Select Profession --</option>
+        <option value="software engineer">Software Engineer</option>
+        <option value="web developer">Web Developer</option>
+        <option value="web designer">Web Designer</option>
+        <option value="frontend developer">Frontend Developer</option>
+        <option value="backend developer">Backend Developer</option>
+        <option value="full stack developer">Full Stack Developer</option>
+        <option value="ui/ux designer">UI/UX Designer</option>
+        <option value="mobile app developer">Mobile App Developer</option>
+        <option value="data scientist">Data Scientist</option>
+        <option value="ethical hacker">Ethical Hacker</option>
+        <option value="cloud engineer">Cloud Engineer</option>
+        <option value="devops engineer">DevOps Engineer</option>
+        <option value="ai engineer">AI Engineer</option>
+      </select>
+    </div>
 
+    <div class="mb-3">
+      <label for="experience">Experience</label>
+      <input type="number" class="form-control" id="experience" placeholder="e.g. 3" required>
+    </div>
 
-  <div class="mb-3">
-    <label for="experience">Experience</label>
-    <input type="number" class="form-control" id="experience" placeholder="e.g. 3" required>
-  </div>
+    <!-- Projects Section Inputs -->
+    <div id="projectsInputContainer">
+      <h4>Projects</h4>
 
+      <!-- Default Project 1 -->
+      <div class="project-input mb-3">
+        <label>Project 1 Screenshot</label>
+        <input type="file" class="form-control projectImage" accept="image/*" required>
+        <label>Project 1 Title</label>
+        <input type="text" class="form-control projectTitle" placeholder="Enter project title" required>
+        <label>Project 1 Description</label>
+        <textarea class="form-control projectDescription" placeholder="Enter project description" required></textarea>
+        <label>Tags (comma separated)</label>
+        <input type="text" class="form-control projectTags" placeholder="HTML, CSS, JS" required>
+      </div>
 
+      <!-- Default Project 2 -->
+      <div class="project-input mb-3">
+        <label>Project 2 Screenshot</label>
+        <input type="file" class="form-control projectImage" accept="image/*" required>
+        <label>Project 2 Title</label>
+        <input type="text" class="form-control projectTitle" placeholder="Enter project title" required>
+        <label>Project 2 Description</label>
+        <textarea class="form-control projectDescription" placeholder="Enter project description" required></textarea>
+        <label>Tags (comma separated)</label>
+        <input type="text" class="form-control projectTags" placeholder="React, Node, MongoDB" required>
+      </div>
 
+      <!-- Add More Button -->
+      <button type="button" id="addMoreProjects" class="btn btn-secondary mt-2 mb-5">Add More Projects</button>
+    </div>
 
-  <button type="submit" class="btn btn-primary">Save & Preview</button>
+    <button type="submit" class="btn btn-primary">Save & Preview</button>
 </form>
-
-
 
   </div>
 </div>
@@ -63,4 +103,6 @@
 
 
 </body>
+</html>
+
 </html>
