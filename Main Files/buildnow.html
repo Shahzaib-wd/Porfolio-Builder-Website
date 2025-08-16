@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Build Portfolio</title>
+  <title>Vizume - Build Portfolio</title>
+  <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
   <link rel="stylesheet" href="buildnow.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="p-5">
 
 <div class="container py-5">
-  <div class="card p-4 shadow-lg" style="max-width: 600px; margin: auto; border-radius: 15px;">
+  <div class="card p-4 shadow-lg" style="max-width: 800px; margin: auto; border-radius: 15px;">
     <h2 class="text-center mb-4">Build Your Portfolio</h2>
 
   <form id="portfolioForm">
@@ -18,10 +20,13 @@
     <div class="mb-3">
       <label for="profileInput" class="form-label">Profile Picture</label>
       <input type="file" class="form-control" id="profileInput" accept="image/*" required>
+      <div id="profilePreview" class="mt-2 text-center" style="display: none;">
+        <img id="profileImg" src="" alt="Profile Preview" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #007bff;">
+      </div>
     </div>
 
     <div class="mb-3">
-      <label for="name" class="form-label">Your Name</label>
+      <label for="nameInput" class="form-label">Your Name</label>
       <input type="text" class="form-control" id="nameInput" placeholder="Enter Your Full Name" required>
     </div>
 
@@ -56,53 +61,35 @@
     </div>
 
     <div class="mb-3">
-      <label for="experience">Experience</label>
-      <input type="number" class="form-control" id="experience" placeholder="e.g. 3" required>
+      <label for="experience">Experience (Years)</label>
+      <input type="number" class="form-control" id="experience" placeholder="e.g. 3" min="0" max="50" required>
     </div>
 
     <!-- Projects Section Inputs -->
     <div id="projectsInputContainer">
-      <h4>Projects</h4>
-
-      <!-- Default Project 1 -->
-      <div class="project-input mb-3">
-        <label>Project 1 Screenshot</label>
-        <input type="file" class="form-control projectImage" accept="image/*" required>
-        <label>Project 1 Title</label>
-        <input type="text" class="form-control projectTitle" placeholder="Enter project title" required>
-        <label>Project 1 Description</label>
-        <textarea class="form-control projectDescription" placeholder="Enter project description" required></textarea>
-        <label>Tags (comma separated)</label>
-        <input type="text" class="form-control projectTags" placeholder="HTML, CSS, JS" required>
-      </div>
-
-      <!-- Default Project 2 -->
-      <div class="project-input mb-3">
-        <label>Project 2 Screenshot</label>
-        <input type="file" class="form-control projectImage" accept="image/*" required>
-        <label>Project 2 Title</label>
-        <input type="text" class="form-control projectTitle" placeholder="Enter project title" required>
-        <label>Project 2 Description</label>
-        <textarea class="form-control projectDescription" placeholder="Enter project description" required></textarea>
-        <label>Tags (comma separated)</label>
-        <input type="text" class="form-control projectTags" placeholder="React, Node, MongoDB" required>
+      <h4 class="mb-3">Projects <span class="badge bg-secondary" id="projectCount">2</span></h4>
+      
+      <div id="projectsList">
+        <!-- Projects will be dynamically added here -->
       </div>
 
       <!-- Add More Button -->
-      <button type="button" id="addMoreProjects" class="btn btn-secondary mt-2 mb-5">Add More Projects</button>
+      <button type="button" id="addMoreProjects" class="btn btn-outline-primary mt-3 mb-4">
+        <i class="fas fa-plus"></i> Add More Projects
+      </button>
     </div>
 
-    <button type="submit" class="btn btn-primary">Save & Preview</button>
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary btn-lg">
+        <i class="fas fa-rocket"></i> Save & Preview
+      </button>
+    </div>
 </form>
 
   </div>
 </div>
 
-
 <script src="buildnow.js"></script>
 
-
 </body>
-</html>
-
 </html>
