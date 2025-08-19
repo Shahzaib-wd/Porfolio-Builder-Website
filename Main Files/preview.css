@@ -180,8 +180,8 @@ body {
 }
 
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid white;
@@ -191,14 +191,14 @@ body {
 
 .hero-subtitle {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   opacity: 0.9;
 }
 
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   animation: slideInUp 1s ease-out;
 }
 
@@ -211,7 +211,7 @@ body {
 
 .hero-description {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   opacity: 0.9;
   animation: slideInUp 1s ease-out 0.2s both;
 }
@@ -224,15 +224,15 @@ body {
   animation: slideInUp 1s ease-out 0.4s both;
 }
 
-.btn {
-  padding: 12px 24px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+.btn{
+  padding: 12px 24px !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
 }
 
 .btn-primary {

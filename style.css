@@ -24,9 +24,9 @@ h1, h2, h3, .section-title, button {
 nav {
 
   z-index: 999;
-  background-color: transparent;
+  background-color: transparent !important;
   box-shadow: 0 0 7px 	#6c00ff;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px) !important;
   font-family: 'Inter', sans-serif !important;
   margin: 20px;
   border-radius: 50px;
