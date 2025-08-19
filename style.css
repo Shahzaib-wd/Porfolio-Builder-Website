@@ -27,18 +27,19 @@ nav {
   background-color: transparent;
   box-shadow: 0 0 7px 	#6c00ff;
   backdrop-filter: blur(20px);
-    font-family: 'Inter', sans-serif !important;
-    margin: 20px;
-    border-radius: 50px;
+  font-family: 'Inter', sans-serif !important;
+  margin: 20px;
+  border-radius: 50px;
+  
 }
 nav ul{
     align-items: center;
 }
 nav a{
-    color: #ffffff !important;
-    font-weight: bolder !important;
-    text-shadow: 	#6c00ff 1px 0 10px;
-      text-decoration: none;
+  color: #ffffff !important;
+  font-weight: bolder !important;
+  text-shadow: 	#6c00ff 1px 0 10px;
+  text-decoration: none;
   transition: all 0.4s;
   position: relative;
   overflow: hidden;
@@ -560,7 +561,7 @@ main #hero h1 span{
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 
 }
@@ -650,6 +651,67 @@ main #hero h1 span{
 }
 
 /* testimonals section Ends here */
+
+
+/* trusted user */
+   #stats {
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#stats h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.stat-box {
+  background: rgb(26, 23, 23);
+  border-radius: 15px;
+  padding: 30px 40px;
+  width: 250px;
+  height: 150px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+
+}
+
+.stat-box:hover {
+  transform: translateY(-8px);
+    box-shadow: 4px 5px 17px -4px 	#6c00ff;
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+  color: rgb(111, 12, 224);
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .stat-box {
+    width: 100%;
+  }
+}
+
+
+
 section{
   margin-bottom: 20px ;
 }
@@ -764,6 +826,10 @@ section{
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+
+
+/* Whatsapp Icon */
+
 .whatsapp-btn img {
   width: 30px;
   height: 30px;
@@ -774,6 +840,25 @@ section{
   transform: scale(1.1);
   background-color: #1ebe5d;
 }
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 65px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 45%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-fixed:hover {
+  transform: scale(1.1);
+}
 
 /* Scroll-to-Top Button */
 #scrollBtn {
@@ -781,12 +866,12 @@ section{
   bottom: 5px; 
   right: 20px;
   z-index: 998;
-  background-color: #007bff;
+  background-color: #8e05ff;
   color: white;
   border: none;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 45%;
   font-size: 22px;
   cursor: pointer;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
