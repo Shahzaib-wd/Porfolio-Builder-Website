@@ -14,7 +14,7 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">Portfolio.</a>
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -25,7 +25,7 @@
                 <button id="themeToggle" class="theme-toggle">
                     <i class="fas fa-moon"></i>
                 </button>
-                <div class="hamburger">
+                <div class="hamburger" id="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -192,6 +192,11 @@
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
+                <div class="footer-actions preview-only">
+                    <button id="downloadBtn" class="download-btn">
+                        <i class="fas fa-download"></i> Download Project
+                    </button>
+                </div>
                 <div class="copyright">
                     <p>&copy; 2025 <span id="copyrightName"></span>. All rights reserved.</p>
                 </div>
@@ -204,6 +209,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="preview.js"></script>
 </body>
