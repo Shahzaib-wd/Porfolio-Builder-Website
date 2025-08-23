@@ -48,13 +48,13 @@ nav a{
 }
 
 
-nav a:hover {
+nav ul a:hover {
   background-color: rgba(166, 166, 166, 0.1);
   color: white;
   z-index: 11;
 }
 
-nav a::before {
+nav ul a:before {
   content: "";
   position: absolute;
   width: 0;
@@ -67,7 +67,7 @@ nav a::before {
   z-index: -1;
 }
 
-nav a:hover::before {
+nav ul a:hover::before {
   width: 100%;
 }
 
@@ -88,7 +88,6 @@ nav .navbar-toggler{
   border-radius: 10px;
   font-weight: 600;
   color: white;
-  box-shadow: 0 0 0 2px 	#6c00ff;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -136,9 +135,10 @@ nav .navbar-toggler{
 }
 
 .animated-button:hover {
-  box-shadow: 0 0 0 12px transparent;
+  box-shadow: 0 0 0 8px transparent;
   color: #212121;
   border-radius: 12px;
+  border-color: #6c00ff;
   overflow: hidden;
 }
 
@@ -160,7 +160,7 @@ nav .navbar-toggler{
 
 .animated-button:active {
   scale: 0.95;
-  box-shadow: 0 0 0 4px 	#6c00ff;
+  box-shadow: 0 0 0 4px 	#090909;
 }
 
 .animated-button:hover .circle {
@@ -452,6 +452,7 @@ nav .navbar-toggler{
 #projects .carousel-track {
   display: flex;
   gap: 1rem;
+  
   transition: transform 0.4s ease-in-out;
 }
 
@@ -645,7 +646,7 @@ nav .navbar-toggler{
 /* Testimonials Grid */
 #testimonials .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   z-index: 1;
   position: relative;

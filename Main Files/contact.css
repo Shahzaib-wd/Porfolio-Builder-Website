@@ -9,26 +9,27 @@
 
 
 
-    /* navbar */
+/* navbar */
 
 nav {
 
   z-index: 999;
-  background-color: transparent;
+  background-color: transparent !important;
   box-shadow: 0 0 7px 	#6c00ff;
-  backdrop-filter: blur(20px);
-    font-family: 'Inter', sans-serif !important;
-    margin: 20px;
-    border-radius: 50px;
+  backdrop-filter: blur(20px) !important;
+  font-family: 'Inter', sans-serif !important;
+  margin: 20px;
+  border-radius: 50px;
+  
 }
 nav ul{
     align-items: center;
 }
 nav a{
-    color: #ffffff !important;
-    font-weight: bolder !important;
-    text-shadow: 	#6c00ff 1px 0 10px;
-      text-decoration: none;
+  color: #ffffff !important;
+  font-weight: bolder !important;
+  text-shadow: 	#6c00ff 1px 0 10px;
+  text-decoration: none;
   transition: all 0.4s;
   position: relative;
   overflow: hidden;
@@ -36,13 +37,13 @@ nav a{
 }
 
 
-nav a:hover {
+nav ul a:hover {
   background-color: rgba(166, 166, 166, 0.1);
   color: white;
   z-index: 11;
 }
 
-nav a::before {
+nav ul a:before {
   content: "";
   position: absolute;
   width: 0;
@@ -55,7 +56,7 @@ nav a::before {
   z-index: -1;
 }
 
-nav a:hover::before {
+nav ul a:hover::before {
   width: 100%;
 }
 
@@ -76,9 +77,8 @@ nav .navbar-toggler{
   border-radius: 10px;
   font-weight: 600;
   color: white;
-  box-shadow: 0 0 0 2px 	#6c00ff;
   cursor: pointer;
-  overflow: hidden !important;
+  overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   width: 170px;
   height: 40px;
@@ -89,6 +89,7 @@ nav .navbar-toggler{
   position: absolute;
   width: 24px;
   fill: 	#6c00ff;
+  overflow: hidden;
   z-index: 9;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -110,8 +111,8 @@ nav .navbar-toggler{
   height: 20px;
   background-color: 	#6c00ff;
   border-radius: 50%;
-  opacity: 0;
   overflow: hidden;
+  opacity: 0;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -123,9 +124,11 @@ nav .navbar-toggler{
 }
 
 .animated-button:hover {
-  box-shadow: 0 0 0 12px transparent;
+  box-shadow: 0 0 0 8px transparent;
   color: #212121;
   border-radius: 12px;
+  border-color: #6c00ff;
+  overflow: hidden;
 }
 
 .animated-button:hover .arr-1 {
@@ -146,7 +149,7 @@ nav .navbar-toggler{
 
 .animated-button:active {
   scale: 0.95;
-  box-shadow: 0 0 0 4px 	#6c00ff;
+  box-shadow: 0 0 0 4px 	#090909;
 }
 
 .animated-button:hover .circle {
@@ -157,6 +160,7 @@ nav .navbar-toggler{
 
 
 /* navbar */
+
     
       .contact-heading {
       text-align: center;
