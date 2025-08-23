@@ -16,6 +16,139 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Poppins:wght@300;400;500&display=swap"
     rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+
+  <style>
+.portfolio-cta {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+  background: #090510;
+}
+.cta-box {
+  text-align: center;
+  max-width: 650px;
+  padding: 70px 40px;
+  border-radius: 24px;
+ 
+  /* border: 1px solid rgba(139, 92, 246, 0.3); */ background: linear-gradient(149deg,rgba(129,74,200,.4) 0%,var(--token-b2fb23d9-6070-4f2d-b3d0-2fe68c4f2aab, rgba(13, 13, 13, .8)) 28.999999999999996%,var(--token-b2fb23d9-6070-4f2d-b3d0-2fe68c4f2aab, rgba(13, 13, 13, .8)) 74%,rgba(129,74,200,.4) 100%);
+  /* box-shadow: 0 10px 32px rgba(139, 92, 246, 0.35); */
+}
+.cta-box h2 {
+  font-family: 'Figtree', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.cta-box p {
+  font-family: 'Figtree', sans-serif; /* same font as heading */
+  font-size: 18px;
+  font-weight: 400;
+  color: #ccc;
+  margin-bottom: 28px;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 12px;
+    background: linear-gradient(135deg, #6c00ff, #9b59b6);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 600;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.cta-btn:hover {
+   background: linear-gradient(135deg, #9b59b6, #6c00ff);
+  transform: translateY(-2px);
+   box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+
+ 
+
+  .benefits {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    text-align: center;
+    /* background: linear-gradient(135deg, #6a0dad, #8a2be2); */
+    border-radius: 20px;
+    color: #fff;
+  }
+
+  .benefits-header h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .benefits-header p {
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: #f0e6ff; 
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+
+  .benefit-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+     background: linear-gradient(149deg,rgba(129,74,200,.4) 0%,var(--token-b2fb23d9-6070-4f2d-b3d0-2fe68c4f2aab, rgba(13, 13, 13, .8)) 28.999999999999996%,var(--token-b2fb23d9-6070-4f2d-b3d0-2fe68c4f2aab, rgba(13, 13, 13, .8)) 74%,rgba(129,74,200,.4) 100%);
+     border-color: var(--token-313dd4d6-9859-4bdd-889b-954a849d13e3, rgb(34, 34, 34));
+    text-align: left;
+    color: #333;
+    opacity: 1;
+    transition: all 2s ease-out;
+    
+  }
+  .benefit-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  .benefit-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(196, 5, 244, 0.37);
+  }
+
+  .benefit-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #6a0dad;
+  }
+
+  .benefit-box h3 i {
+    color: #8a2be2;
+    font-size: 1.3rem;
+  }
+
+  .benefit-box p {
+    font-size: 0.95rem;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+</style>
+</style>
+
 </head>
 
 <body>
@@ -45,7 +178,7 @@
               <a class="nav-link active text-white" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#features">How it works</a>
+              <a class="nav-link text-white" href="#purpose2">How it works</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#projects">Projects</a>
@@ -59,10 +192,10 @@
           </ul>
 
           <!-- 🔸 Right Button -->
-          <div class="d-flex ms-lg-auto justify-content-center mt-3 mt-lg-0" > 
+          <div class="d-flex ms-lg-auto justify-content-center mt-3 mt-lg-0">
             <!-- From Uiverse.io by gharsh11032000 -->
-             <a href="Main Files/buildnow.html" style="text-decoration: none; ">
-            <button class="animated-button overflow-hidden" >
+             <a href="Main Files/buildnow.html" style="text-decoration: none;">
+            <button class="animated-button">
               <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
@@ -97,7 +230,8 @@
 
     <!-- Hero Section Starts Here -->
 
-  <section class="hero" role="main" aria-label="Branding section with tagline and call to action">
+  <section class="hero"  role="main" aria-label="Branding section with tagline and call to action">
+    <img src="" alt="">
     <div class="badge" aria-label="Badge indicating unique brand identities" data-aos="fade-down" data-aos-delay="200">
       Crafting Unique Brand Identities
     </div>
@@ -110,12 +244,11 @@
     </p>
       <div class="buttons"  data-aos="fade-up" data-aos-delay="1000">
         <a href="Main Files/buildnow.html" class="btn primary">Get Started Now</a>
-        <a href="#projects" class="btn secondary">See Templates</a>
+        <a href="#projects" class="btn secondary">See Projects</a>
       </div>
     </div>
     <div class="scroll-down">Scroll down</div>
   </section>
-
 
     <!-- Hero Section Ends Here -->
 
@@ -127,12 +260,11 @@
     <section id="purpose" data-aos="fade" data-aos-delay="300">
       
       <div class="text">
-        <h2 data-aos="fade" data-aos-delay="500">Dont know how to <span>CODE</span> ?</h2>
-        <h3 data-aos="fade" data-aos-delay="600">We Got You</h3>
+        <h2 style="color: white;" data-aos="fade" data-aos-delay="500">Struggling With  <span>CODE?</span> ?</h2>
+        <h3 data-aos="fade" data-aos-delay="600" style="color: white;">We’ve Got <span style="color: #6c00ff; font-weight: 800;">YOU</span> Covered.</h3>
+      
 
       </div>
-
-
     </section>
 
     <!-- Prupose section Ends Here -->
@@ -141,36 +273,39 @@
 
     <!-- scetion Feature Starts Here -->
 
-    <section id="features" style="padding: 2rem;" >
-      <h2>How It Works</h2>
+    <section id="purpose2" class="benefits">
+  <div class="benefits-header">
+    <h2 style="color: #6c00ff;">How It Works</h2>
+    <p>it faster, easier, and completely hassle-free.</p>
+  </div>
 
-      <div class="cards"
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-        <div class="card" data-aos="zoom-in" data-aos-delay="100"
-          style="background: transparent; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-          <h3>📝 Easy Form Input</h3>
-          <p>Just fill in your details — no coding skills needed.</p>
-        </div>
-
-        <div class="card"  data-aos="zoom-in" data-aos-delay="500"
-          style="background: transparent; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-          <h3>⚡ Live Preview</h3>
-          <p>Instantly see how your portfolio looks as you type.</p>
-        </div>
-
-        <div class="card"  data-aos="zoom-in" data-aos-delay="700"
-          style="background: transparent; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-          <h3>📄 PDF Ready</h3>
-          <p>Download or print your portfolio with one click.</p>
-        </div>
-
-        <div class="card" data-aos="zoom-in" data-aos-delay="900"
-          style="background: transparent; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-          <h3>📱 Fully Responsive</h3>
-          <p>Works great on desktop, tablet and mobile screens.</p>
-        </div>
-      </div>
-    </section>
+  <div class="benefits-grid">
+    <div class="benefit-box" data-aos="fade-up" data-aos-delay="100">
+      <h3><i class="fa-solid fa-keyboard"></i> Easy Form Input</h3>
+      <p>Just fill in your details — no coding skills needed.</p>
+    </div>
+    <div class="benefit-box" data-aos="fade-up" data-aos-delay="200">
+      <h3><i class="fa-solid fa-eye"></i> Live Preview</h3>
+      <p>Instantly see how your portfolio looks as you type.</p>
+    </div>
+    <div class="benefit-box" data-aos="fade-up" data-aos-delay="300">
+      <h3><i class="fa-solid fa-file-zipper"></i> Download ZIP</h3>
+      <p>Save your portfolio with all files in one folder.</p>
+    </div>
+    <div class="benefit-box" data-aos="fade-up" data-aos-delay="400">
+      <h3><i class="fa-solid fa-display"></i>  Fully Responsive</h3>
+      <p>Works great on desktop, tablet and mobile screens.</p>
+    </div>
+    <div class="benefit-box" data-aos="fade-up" data-aos-delay="500">
+      <h3><i class="fa-solid fa-user-check"></i>No sign-up required</h3>
+      <p>build your portfolio instantly!</p>
+    </div>
+   <div class="benefit-box" data-aos="fade-up" data-aos-delay="600">
+  <h3><i class="fa-solid fa-bolt"></i> Quick & Easy</h3>
+  <p>Create your portfolio in minutes.</p>
+</div>
+</div>
+</section>
 
     <!-- scetion Feature Ends Here -->
 
@@ -178,30 +313,54 @@
 
     <!-- preview section Stars Here -->
 
-     <section id="projects" class="template-carousel"  data-aos="fade-up" data-aos-delay="1000">
-    <h2>EXPLORE VIZUME TEMPLATES</h2>
-    <div class="carousel-container">
-      <button class="prev">&#10094;</button>
-      <div class="carousel-track w-100" >
-        <img src="images/sample1.jpg" alt="Classic Template" />
-        <img src="images/sample2.jpg" alt="Dark Mode Template" />
-        <img src="images/sample3.jpg" alt="Creative Template" />
-        <img src="images/sample4.jpg" alt="Business Card Template" />
-        <img src="images/sample5.jpg" alt="Business Card Template" />
-        <img src="images/sample6.jpg" alt="Business Card Template" />
-        
-      </div>
-      <button class="next">&#10095;</button>
-    </div>
-  </section>
+  <section id="projects" class="recent-works">
+  <h2 class="section-title">EXPLORE VIZUME TEMPLATES</h2>
 
+  <!-- Arrows -->
+  <div class="arrow arrow-left">&#10094;</div>
+  <div class="arrow arrow-right">&#10095;</div>
+
+  <div class="carousel-container">
+    <div class="works-grid" id="worksGrid">
+
+      <div class="work-card">
+        <img src="images/ppp.jpeg" alt="1">
+        <a href="#" class="btn_">Coming Soon<span class="icon">&#8594;</span></a>
+      </div>
+
+      <div class="work-card">
+        <img src="images/sample4.jpg" alt="2">
+        <a href="#" class="btn_">Coming Soon<span class="icon">&#8594;</span></a>
+      </div>
+
+      <div class="work-card">                           
+        <img src="images/img2.webp" alt="3">
+        <a href="#" class="btn_">Coming Soon<span class="icon">&#8594;</span></a>
+      </div>
+
+      <div class="work-card">
+        <img src="images/sample5.jpg" alt="4">
+        <a href="#" class="btn_">Coming Soon <span class="icon">&#8594;</span></a>
+      </div>
+      <div class="work-card">
+        <img src="images/img7.jpeg" alt="7">
+        <a href="#" class="btn_">Coming Soon <span class="icon">&#8594;</span></a>
+      </div>
+       <div class="work-card">
+        <img src="images/img8.jpeg" style="margin-top: 40px;" alt="5">
+        <a href="#" class="btn_">Coming Soon<span class="icon">&#8594;</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- preview section Ends Here -->
-
         <!--Trusted User -->>
 
          <section id="stats">
-  <h2>Trusted by Creators Worldwide</h2>
+  <h2 style="color: #6c00ff;">Trusted by Creators Worldwide</h2>
+  <p style="position: relative; bottom: 30px;">Join thousands of creators who rely on us to bring their ideas to life.</p>
   <div class="stats-container"  data-aos="fade" data-aos-delay="500">
     <div class="stat-box">
       <h3><span class="counter" data-target="10000" >0</span>+</h3>
@@ -229,7 +388,7 @@
 
 
     <section class="text-light" id="testimonials" data-aos="fade-down" data-aos-delay="300">
-      <h2 class="section-title text-light">💬 What Users Say</h2>
+      <h2 class="section-title text-light" style="color: #6c00ff;">💬 What Users Say</h2>
                     <video autoplay muted loop playsinline>
         <source  src="BG/bg4.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -341,7 +500,8 @@
     <section id="for-who">
     <strong>
 
-      <h2>Who Is Vizume For?</h2>
+      <h2 style="color: #6c00ff;">Who Is Vizume For?</h2>
+      
     
     </strong>
       
@@ -387,17 +547,23 @@
     <!-- Reviews section Ends Here -->
 
 
-    <section" id="portfolio" data-aos="fade-down" data-aos-delay="300">
-          <!-- <video autoplay muted loop playsinline>
+    <!-- <section" id="portfolio" data-aos="fade-down" data-aos-delay="300">
+          <video autoplay muted loop playsinline>
         <source  src="BG/bg5.mp4" type="video/mp4">
         Your browser does not support the video tag.
-      </video> -->
+      </video>
       <h1>Get Your Portfolio In Just 5 Minutes !</h1>
       <a href="Main Files/buildnow.html"><button class="btn btn-primary button">Get Now</button></a>
       </section>
+ -->
 
-
-
+<section class="portfolio-cta" data-aos="fade-up" data-aos-duration="1200">
+  <div class="cta-box">
+    <h2>Get Portfolio In Just 5 Minutes</h2>
+    <p>Create and share a professional portfolio in minutes — so you can scale faster and focus on opportunities.</p>
+    <a href="/Main Files/buildnow.html" class="cta-btn" data-aos="flip-up" data-aos-delay="600">Build My Portfolio</a>
+  </div>
+</section>
 
   </main>
 
@@ -411,51 +577,90 @@
 
   <!-- Footer section Starts Here -->
 
-
-
-
-  <footer id="main-footer">
-    <div class="footer-container">
-
-      <div class="footer-brand">
-        <a href="#"><img src="images/logo.png" width="180" height="50" alt="logo"></a>
-        <p>Build & share your personal portfolio in minutes.</p>
-      </div>
-
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="Main Files/contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-social">
-        <h3>Connect</h3>
-        <div class="social-icons">
-          <a href="https://github.com/shahzaib-wd" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-        </div>
-      </div>
-
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="" style="height: 50px; width: 140px; margin-left: -15px; size: 50%;">
+      <p style="font-size: 16px; ">AI powered solutions for modern businesses.</p>
+      <h3 style="color: white;">Join Our Newsletter</h3>
+     <form id="subscribeForm">
+  <input type="email" id="emailInput" placeholder="Enter your email">
+  <button type="submit">Subscribe</button>
+  <p id="errorMsg"></p>
+</form>
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2025 Vizume Portfolio Builder. All rights reserved.</p>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#purpose2">Features</a>
+        <a href="#projects">Project</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="/Main Files/contact.html">Contact Us</a>
+      </div>
+      <div>
+        <h4>Builder Features</h4>
+      <a href="#stats">Trust Creaters</a>
+      <a href="#purpose"> How It Work </a>
+      <a href="/Main Files/buildnow.html">Get Form</a>
+      </div>
+     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+  <!-- GitHub -->
+   <h4>Social</h4>
+<!-- Social Icons -->
+<div style="display: flex; justify-content: center; gap: 25px; padding: 15px 0;">
+  <!-- GitHub -->
+  <a href="https://github.com/shahzaib-wd" target="_blank" title="GitHub" 
+     style="color: grey; text-decoration: none; display: inline-block;"
+     onmouseover="this.querySelector('svg').style.fill='#6c00ff'" 
+     onmouseout="this.querySelector('svg').style.fill='grey'">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="grey">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.263.82-.583v-2.17c-3.338.725-4.033-1.61-4.033-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.304.762-1.604-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.522.117-3.176 0 0 1.008-.322 3.3 1.23a11.44 11.44 0 0 1 3-.403c1.02.005 2.04.138 3 .403 2.28-1.552 3.285-1.23 3.285-1.23.655 1.654.243 2.873.12 3.176.77.84 1.236 1.91 1.236 3.22 0 4.61-2.807 5.625-5.48 5.922.43.37.823 1.096.823 2.21v3.283c0 .322.216.698.825.58C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z"/>
+    </svg>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://facebook.com/yourprofile" target="_blank" title="Facebook" 
+     style="color: grey; text-decoration: none; display: inline-block;"
+     onmouseover="this.querySelector('svg').style.fill='#6c00ff'" 
+     onmouseout="this.querySelector('svg').style.fill='grey'">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="grey">
+      <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.692V11.09h3.128V8.412c0-3.1 1.893-4.788 4.658-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.616h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn" 
+     style="color: grey; text-decoration: none; display: inline-block;"
+     onmouseover="this.querySelector('svg').style.fill='#6c00ff'" 
+     onmouseout="this.querySelector('svg').style.fill='grey'">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="grey">
+      <path d="M22.23 0H1.77C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.77 24h20.46c.978 0 1.77-.774 1.77-1.729V1.729C24 .774 23.208 0 22.23 0zM7.09 20.452H3.54V9h3.55v11.452zM5.315 7.433c-1.135 0-2.054-.93-2.054-2.076 0-1.146.919-2.075 2.054-2.075 1.134 0 2.052.93 2.052 2.075 0 1.146-.918 2.076-2.052 2.076zM20.452 20.452h-3.547v-5.602c0-1.335-.027-3.054-1.859-3.054-1.861 0-2.145 1.454-2.145 2.956v5.7h-3.548V9h3.407v1.561h.048c.475-.899 1.637-1.846 3.37-1.846 3.603 0 4.268 2.37 4.268 5.451v6.286z"/>
+    </svg>
+  </a>  
+</div>
+</div>
     </div>
-  </footer>
+  </div>
+  <div class="footer-bottom">
+  <div class="footer-container">
+    
+    <!-- Left: Logo + by TS -->
+    <div class="footer-left text-center">  
+     <a href="" style="text-decoration:  none;color: #fff; cursor: pointer; text-align: center;" >Visioned and Crafted by <strong> TAYYAB SHAHZAIB.</strong></a>
+    </div>
+    <div>
+           <p>© 2025 Vizume. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+ 
+</footer>
 
 
-
-
-
-
-
-
+ 
 
 
   <!-- Footer section Ends Here -->
@@ -505,58 +710,137 @@
         track.style.transform = `translateX(-${index * slideWidth}px)`;
       }
     });
-   
+     AOS.init({
+    once: false // har bar scroll pe trigger hoga
+  });
+  
 
-      function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  </script>
+
+  <script>
+  const counters = document.querySelectorAll(".counter");
+
+function runCounter(counter) {
+  counter.innerText = "0";
+  const target = +counter.getAttribute("data-target");
+
+  const updateCounter = () => {
+    const current = +counter.innerText;
+    const increment = target / 150;
+
+    if (current < target) {
+      counter.innerText = `${Math.ceil(current + increment)}`;
+      setTimeout(updateCounter, 30);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  updateCounter();
 }
-
-window.onscroll = function () {
-  let scrollBtn = document.getElementById("scrollBtn");
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-};
-
-
-
-
-
-const counters = document.querySelectorAll('.counter');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const counter = entry.target;
-      counter.innerText = '0';
-      const target = +counter.getAttribute('data-target');
-
-      const updateCounter = () => {
-        const current = +counter.innerText;
-        const increment = target / 100;
-
-        if (current < target) {
-          counter.innerText = `${Math.ceil(current + increment)}`;
-          setTimeout(updateCounter, 20);
-        } else {
-          counter.innerText = target;
-        }
-      };
-
-      updateCounter();
+      runCounter(entry.target);
     }
   });
-}, { threshold: 0.6 }); // adjust threshold as needed
+}, { threshold: 0.5 });
 
-counters.forEach(counter => {
-  observer.observe(counter);
+counters.forEach(counter => observer.observe(counter));
+
+
+
+ const grid = document.getElementById('worksGrid');
+  const leftArrow = document.querySelector('.arrow-left');
+  const rightArrow = document.querySelector('.arrow-right');
+
+  const cardWidth = document.querySelector('.work-card').offsetWidth + 30; // card width + gap
+  let scrollPosition = 0;
+
+  rightArrow.addEventListener('click', () => {
+    const maxScroll = grid.scrollWidth - grid.parentElement.offsetWidth;
+    scrollPosition += cardWidth;
+    if(scrollPosition > maxScroll) scrollPosition = maxScroll;
+    grid.style.transform = `translateX(-${scrollPosition}px)`;
+  });
+
+  leftArrow.addEventListener('click', () => {
+    scrollPosition -= cardWidth;
+    if (scrollPosition < 0) scrollPosition = 0;
+    grid.style.transform = `translateX(-${scrollPosition}px)`;
+  });
+
+  // recent-works cards animation (no global name clashes)
+(() => {
+  const section = document.querySelector('.recent-works');
+  if (!section) return;
+
+  const cards = section.querySelectorAll('.work-card');
+  if (!cards.length) return;
+
+  // Observer with a unique name
+  const cardsObserverRW = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const card = entry.target;
+      if (entry.isIntersecting) {
+        card.classList.add('show');     // fade-in + slide-up (CSS me defined)
+      } else {
+        card.classList.remove('show');  // scroll back par wapas hide
+      }
+    });
+  }, { threshold: 0.2 });
+
+  // Staggered delay (optional, looks pro)
+  cards.forEach((card, i) => {
+    card.style.transitionDelay = `${i * 80}ms`;
+    cardsObserverRW.observe(card);
+  });
+})();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".benefit-box");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // stagger delay based on index
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, i * 150);
+      } else {
+        entry.target.classList.remove("show"); // scroll up par hide
+      }
+    });
+  }, { threshold: 2 }); // box thoda visible hote hi trigger
+
+  boxes.forEach((box, i) => observer.observe(box));
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("subscribeForm");
+  const input = document.getElementById("emailInput");
+  const errorMsg = document.getElementById("errorMsg");
 
-      
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
+    const email = input.value.trim();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "" || !regex.test(email)) {
+      // Shake animation (add a class in CSS)
+      input.classList.add("shake");
+      errorMsg.textContent = "Please enter a valid email";
+      setTimeout(() => input.classList.remove("shake"), 500);
+    } else {
+      errorMsg.textContent = "";
+      alert(`Subscribed successfully: ${email}`);
+      input.value = "";
+    }
+  });
+});
 
   </script>
 </body>
