@@ -694,7 +694,7 @@ color: white;
 /* Testimonials Grid */
 #testimonials .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   z-index: 1;
   position: relative;
@@ -996,19 +996,18 @@ box-shadow: 0 8px 32px rgba(196, 5, 244, 0.37);
 .whatsapp-fixed:hover {
   transform: scale(1.1);
 }
-
 /* Scroll-to-Top Button */
 #scrollBtn {
   position: fixed;
-  bottom: 5px; 
+  bottom: 5px;  /* 60px above WhatsApp */
   right: 20px;
   z-index: 998;
-  background-color: #6c00ff;
+  background-color: #007bff;
   color: white;
   border: none;
-  width: 57px;
-  height: 57px;
-  border-radius: 55%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   font-size: 22px;
   cursor: pointer;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -1017,10 +1016,9 @@ box-shadow: 0 8px 32px rgba(196, 5, 244, 0.37);
 }
 
 #scrollBtn:hover {
-  background-color: #0056b3;
+  background-color: #0056b3;    
   transform: scale(1.1);
 }
-
 
 
 /* footer section starts Here  */

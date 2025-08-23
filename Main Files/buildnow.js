@@ -26,6 +26,7 @@ class PortfolioBuilder {
         document.getElementById('phoneInput').value = existingData.personal.phone || '';
         document.getElementById('roleSelect').value = existingData.personal.role || '';
         document.getElementById('experience').value = existingData.personal.experience || '';
+        document.getElementById('skillsInput').value = existingData.personal.skills || '';
         
         if (existingData.personal.profileImage) {
           this.showProfilePreview(existingData.personal.profileImage);
@@ -60,8 +61,8 @@ class PortfolioBuilder {
     if (this.projects.length === 0) {
       // Create initial projects
       this.projects = [
-        { id: this.generateId(), title: '', description: '', tags: '', image: '', link: '' },
-        { id: this.generateId(), title: '', description: '', tags: '', image: '', link: '' }
+        { id: this.generateId(), title: '', description: '', tags: '', image: '' },
+        { id: this.generateId(), title: '', description: '', tags: '', image: '' }
       ];
     }
     
@@ -98,8 +99,7 @@ class PortfolioBuilder {
         title: '',
         description: '',
         tags: '',
-        image: '',
-        link: ''
+        image: ''
       };
       
       this.projects.push(newProject);
@@ -185,7 +185,7 @@ class PortfolioBuilder {
     if (this.projects.length >= this.maxProjects) {
       addButton.style.display = 'none';
     } else {
-      addButton.style.display = 'block';
+      addButton.style.display = 'flex';
     }
   }
 
@@ -204,47 +204,40 @@ class PortfolioBuilder {
         ` : ''}
       </div>
 
-      <div class="row">
-        <div class="col-md-6 mb-3">
+      <div class="project-row">
+        <div class="project-col">
           <label class="form-label">Project Screenshot</label>
           <div class="image-upload-area ${project.image ? 'has-image' : ''}">
             <input type="file" class="form-control" accept="image/*" 
                    onchange="portfolioBuilder.handleProjectImageUpload('${project.id}', this.files[0])" 
                    ${!project.image ? 'required' : ''}>
-            <small class="text-muted d-block mt-1">
+            <small class="upload-text">
               <i class="fas fa-cloud-upload-alt"></i> Upload project screenshot
             </small>
             ${project.image ? `<img src="${project.image}" class="image-preview" alt="Project preview">` : ''}
           </div>
         </div>
         
-        <div class="col-md-6">
-          <div class="mb-3">
+        <div class="project-col">
+          <div class="form-group">
             <label class="form-label">Project Title</label>
             <input type="text" class="form-control" value="${project.title}" 
                    onchange="portfolioBuilder.updateProject('${project.id}', 'title', this.value)"
                    placeholder="Enter project title" required>
           </div>
           
-          <div class="mb-3">
+          <div class="form-group">
             <label class="form-label">Technologies Used</label>
             <input type="text" class="form-control" value="${project.tags}" 
                    onchange="portfolioBuilder.updateProject('${project.id}', 'tags', this.value)"
                    placeholder="React, Node.js, MongoDB" required>
           </div>
-
-          <div class="mb-3">
-            <label class="form-label">Project Link (Optional)</label>
-            <input type="url" class="form-control" value="${project.link}" 
-                   onchange="portfolioBuilder.updateProject('${project.id}', 'link', this.value)"
-                   placeholder="https://your-project.com">
-          </div>
         </div>
       </div>
 
-      <div class="mb-3">
+      <div class="form-group">
         <label class="form-label">Project Description</label>
-        <textarea class="form-control" rows="3" 
+        <textarea class="project-textarea" 
                   onchange="portfolioBuilder.updateProject('${project.id}', 'description', this.value)"
                   placeholder="Describe your project, its features, and your role in it" required>${project.description}</textarea>
       </div>
@@ -287,6 +280,11 @@ class PortfolioBuilder {
       return false;
     }
 
+    if (!personalInfo.skills.trim()) {
+      alert('Please enter your skills');
+      return false;
+    }
+
     // Validate projects
     for (let i = 0; i < this.projects.length; i++) {
       const project = this.projects[i];
@@ -324,6 +322,7 @@ class PortfolioBuilder {
       phone: document.getElementById('phoneInput').value,
       role: document.getElementById('roleSelect').value,
       experience: parseInt(document.getElementById('experience').value) || 0,
+      skills: document.getElementById('skillsInput').value,
       profileImage: profileImg.src || null
     };
   }
@@ -368,7 +367,6 @@ class PortfolioBuilder {
       
       submitBtn.innerHTML = '<i class="fas fa-check"></i> Saved Successfully!';
       submitBtn.classList.add('btn-success');
-      submitBtn.classList.remove('btn-primary');
       
       setTimeout(() => {
         window.location.href = 'preview.html';

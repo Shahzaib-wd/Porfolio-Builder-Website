@@ -648,7 +648,7 @@
     
     <!-- Left: Logo + by TS -->
     <div class="footer-left text-center">  
-     <a href="" style="text-decoration:  none;color: #fff; cursor: pointer; text-align: center;" >Visioned and Crafted by <strong> TAYYAB SHAHZAIB.</strong></a>
+     <a href="" style="text-decoration:  none;color: #fff; cursor: pointer; text-align: center;" >Visioned and Crafted by <strong> TAYYAB &amp SHAHZAIB.</strong></a>
     </div>
     <div>
            <p>© 2025 Vizume. All rights reserved.</p>
@@ -665,15 +665,10 @@
 
   <!-- Footer section Ends Here -->
 
+
+
 <!-- Scroll to Top Button -->
- <a href="https://wa.me/923181486463" class="whatsapp-fixed" target="_blank" title="Chat on WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#25D366" viewBox="0 0 24 24">
-    <path d="M20.52 3.48A11.8 11.8 0 0 0 12 0C5.37 0 .01 5.37.01 12c0 2.11.55 4.15 1.6 5.97L0 24l6.18-1.58a11.95 11.95 0 0 0 5.82 1.49c6.63 0 12-5.37 12-12 0-3.19-1.24-6.2-3.48-8.44zM12 22c-1.84 0-3.65-.49-5.23-1.42l-.38-.23-3.67.94.98-3.58-.25-.37A9.93 9.93 0 0 1 2 12c0-5.51 4.49-10 10-10s10 4.49 10 10-4.49 10-10 10zm5.39-7.51c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14s-.74.93-.9 1.12c-.17.2-.33.21-.62.07a8.14 8.14 0 0 1-2.4-1.48 9.03 9.03 0 0 1-1.65-2.04c-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.3-.48.1-.2.05-.37-.03-.52s-.64-1.54-.88-2.11c-.23-.57-.47-.5-.64-.5h-.55c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.5 1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.3 1.27.47 1.7.6.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.67.24-1.24.17-1.36-.06-.12-.26-.2-.54-.33z"/>
-  </svg>
-</a>
-
-<button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
-
+<button class="text-center" onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
@@ -841,6 +836,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+  function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.onscroll = function () {
+  let scrollBtn = document.getElementById("scrollBtn");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
 
   </script>
 </body>
