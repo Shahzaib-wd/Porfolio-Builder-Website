@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #10b981;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+            padding-top: 76px; /* To account for fixed navbar */
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            z-index: -1;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            transform: rotate(10deg);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Section Padding */
+        section {
+            padding: 80px 0;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+        }
+        
+        /* Skills Section */
+        .skill-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Projects Section */
+        .project-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-color);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        /* CTA Buttons */
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 30px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #4338ca;
+            border-color: #4338ca;
+        }
+        
+        .btn-outline-light {
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 30px;
+        }
+
+        .footer-actions {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .footer-actions .btn {
+            margin: 5px;
+        }
+
+        .download-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" id="navName">Your Name</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold mb-3">Hi, I'm <span id="userName">Your Name</span></h1>
+                    <p class="lead mb-4" id="heroDescription">Loading your professional description...</p>
+                    <div class="d-flex gap-3">
+                        <a href="#projects" class="btn btn-light btn-lg">View My Work</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img id="profileImage" src="https://via.placeholder.com/250x250?text=Your+Photo" alt="Profile Image" class="profile-img rounded-circle mt-5 mt-lg-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Crafting digital experiences with precision</h3>
+                    <p class="lead" id="aboutDescription">Loading your about information...</p>
+                    <p id="aboutDetailsDescription">Loading additional details about your experience and passion...</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row mt-4 mt-lg-0">
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary p-3 rounded-circle me-3">
+                                    <i class="fas fa-calendar-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Experience</h5>
+                                    <p class="mb-0" id="experienceDisplay">0+ Years</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary p-3 rounded-circle me-3">
+                                    <i class="fas fa-project-diagram text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Projects</h5>
+                                    <p class="mb-0" id="projectCount">0 Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary p-3 rounded-circle me-3">
+                                    <i class="fas fa-users text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Clients</h5>
+                                    <p class="mb-0">100% Satisfied</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary p-3 rounded-circle me-3">
+                                    <i class="fas fa-coffee text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Coffee Cups</h5>
+                                    <p class="mb-0">1000+ Consumed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="row" id="skillsContainer">
+                <!-- Skills will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="row" id="projectsContainer">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Let's work together</h3>
+                    <p class="mb-4">I'm always interested in new opportunities and collaborations. Feel free to reach out if you have a project in mind!</p>
+                    
+                    <div class="contact-info">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary p-2 rounded-circle me-3">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Email</h6>
+                                <p class="mb-0" id="userEmail">your.email@example.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary p-2 rounded-circle me-3">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Phone</h6>
+                                <p class="mb-0" id="userPhone">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="text-center">
+                <h4 class="mb-3" id="footerName">Your Name</h4>
+                <div class="social-links mb-3">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='buildnow.html'">
+                        <i class="fas fa-edit"></i> Edit Portfolio
+                    </button>
+                    <button class="download-btn" type="button" id="downloadHTMLBtn">
+                        <i class="fas fa-download"></i> Download Portfolio
+                    </button>
+                </div>
+                <p class="text-muted mt-3">&copy; 2025 <span id="copyrightName">Your Name</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        class PortfolioPreview3 {
+            constructor() {
+                this.portfolioData = null;
+                this.templateNumber = 3;
+                this.init();
+            }
+
+            init() {
+                this.loadPortfolioData();
+                this.renderPortfolio();
+                this.setupEventListeners();
+            }
+
+            loadPortfolioData() {
+                try {
+                    const data = localStorage.getItem('portfolioData');
+                    this.portfolioData = data ? JSON.parse(data) : null;
+                    
+                    if (!this.portfolioData) {
+                        this.showError();
+                        return;
+                    }
+                } catch (error) {
+                    console.error('Error loading portfolio data:', error);
+                    this.showError();
+                }
+            }
+
+            showError() {
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'alert alert-warning position-fixed top-50 start-50 translate-middle';
+                errorMessage.style.cssText = `
+                    z-index: 9999;
+                    min-width: 300px;
+                    text-align: center;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                `;
+                errorMessage.innerHTML = `
+                    <h5 class="alert-heading">No Portfolio Data Found</h5>
+                    <p class="mb-3">Please build your portfolio first.</p>
+                    <button onclick="window.location.href='buildnow.html'" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus"></i> Build Portfolio
+                    </button>
+                `;
+                document.body.appendChild(errorMessage);
+            }
+
+            renderPortfolio() {
+                if (!this.portfolioData) return;
+
+                this.renderPersonalInfo();
+                this.renderSkills();
+                this.renderProjects();
+                this.renderContactInfo();
+            }
+
+            renderPersonalInfo() {
+                const { personal } = this.portfolioData;
+                
+                // Update name elements
+                const nameElements = ['#userName', '#navName', '#footerName', '#copyrightName'];
+                nameElements.forEach(selector => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        element.textContent = personal.name || 'Your Name';
+                    }
+                });
+
+                // Update descriptions
+                const heroDesc = document.querySelector('#heroDescription');
+                if (heroDesc) {
+                    heroDesc.textContent = `A passionate ${personal.role} with ${personal.experience}+ years of experience creating modern and responsive web applications`;
+                }
+
+                const aboutDesc = document.querySelector('#aboutDescription');
+                if (aboutDesc) {
+                    aboutDesc.textContent = `I'm a ${personal.role} with ${personal.experience}+ years of experience building responsive websites and web applications.`;
+                }
+
+                const aboutDetails = document.querySelector('#aboutDetailsDescription');
+                if (aboutDetails) {
+                    aboutDetails.textContent = `My journey in development started during my career, and I've been passionate about creating intuitive and beautiful interfaces ever since. When I'm not coding, I enjoy exploring new technologies and staying up-to-date with industry trends.`;
+                }
+
+                // Update experience display
+                const experienceDisplay = document.querySelector('#experienceDisplay');
+                if (experienceDisplay) {
+                    experienceDisplay.textContent = `${personal.experience}+ Years`;
+                }
+
+                // Update project count
+                const projectCountElement = document.querySelector('#projectCount');
+                if (projectCountElement) {
+                    projectCountElement.textContent = `${this.portfolioData.projects.length}+ Completed`;
+                }
+
+                // Update profile image
+                const profileImage = document.querySelector('#profileImage');
+                if (profileImage && personal.profileImage) {
+                    profileImage.src = personal.profileImage;
+                    profileImage.alt = `${personal.name} - Profile Picture`;
+                }
+
+                // Update page title
+                document.title = `${personal.name} - ${personal.role}`;
+            }
+
+            renderContactInfo() {
+                const { personal } = this.portfolioData;
+                
+                const emailElement = document.querySelector('#userEmail');
+                if (emailElement) {
+                    emailElement.textContent = personal.email || 'your.email@example.com';
+                }
+                
+                const phoneElement = document.querySelector('#userPhone');
+                if (phoneElement) {
+                    phoneElement.textContent = personal.phone || '+1 (555) 123-4567';
+                }
+            }
+
+            renderSkills() {
+                const skillsContainer = document.querySelector('#skillsContainer');
+                if (!skillsContainer) return;
+
+                const skillsString = this.portfolioData.personal.skills || '';
+                const uniqueSkills = skillsString
+                    .split(',')
+                    .map(skill => skill.trim())
+                    .filter(skill => skill);
+
+                // Skill icons mapping
+                const skillIcons = {
+                    'react': 'fab fa-react',
+                    'vue': 'fab fa-vuejs',
+                    'angular': 'fab fa-angular',
+                    'javascript': 'fab fa-js-square',
+                    'typescript': 'fab fa-js-square',
+                    'node.js': 'fab fa-node-js',
+                    'nodejs': 'fab fa-node-js',
+                    'python': 'fab fa-python',
+                    'java': 'fab fa-java',
+                    'php': 'fab fa-php',
+                    'html': 'fab fa-html5',
+                    'html5': 'fab fa-html5',
+                    'css': 'fab fa-css3-alt',
+                    'css3': 'fab fa-css3-alt',
+                    'sass': 'fab fa-sass',
+                    'bootstrap': 'fab fa-bootstrap',
+                    'mysql': 'fas fa-database',
+                    'mongodb': 'fas fa-database',
+                    'postgresql': 'fas fa-database',
+                    'git': 'fab fa-git-alt',
+                    'github': 'fab fa-github',
+                    'docker': 'fab fa-docker',
+                    'aws': 'fab fa-aws',
+                    'firebase': 'fas fa-fire',
+                    'figma': 'fab fa-figma',
+                    'photoshop': 'fas fa-paint-brush',
+                    'illustrator': 'fas fa-palette'
+                };
+
+                const skillsHTML = uniqueSkills.map(skill => {
+                    const skillLower = skill.toLowerCase();
+                    const icon = skillIcons[skillLower] || 'fas fa-code';
+                    
+                    return `
+                        <div class="col-md-6 col-lg-4">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="${icon}"></i>
+                                </div>
+                                <h5 class="skill-name">${skill}</h5>
+                                <p class="text-muted">Experienced in ${skill} development</p>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                skillsContainer.innerHTML = skillsHTML;
+            }
+
+            renderProjects() {
+                const projectsContainer = document.querySelector('#projectsContainer');
+                if (!projectsContainer) return;
+
+                const projectsHTML = this.portfolioData.projects.map(project => {
+                    const techBadges = project.tags
+                        .split(',')
+                        .map(tech => tech.trim())
+                        .filter(tech => tech)
+                        .map(tech => `<span class="badge bg-primary me-1 mb-1">${tech}</span>`)
+                        .join('');
+
+                    return `
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card project-card">
+                                <img src="${project.image}" class="card-img-top project-img" alt="${project.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${project.title}</h5>
+                                    <p class="card-text">${project.description}</p>
+                                    <div class="mb-3">
+                                        ${techBadges}
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="#" class="btn btn-primary btn-sm">View Demo</a>
+                                        <a href="#" class="btn btn-outline-primary btn-sm">Source Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                projectsContainer.innerHTML = projectsHTML;
+            }
+
+            setupEventListeners() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        if (href && href !== '#') {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                                window.scrollTo({
+                                    top: offsetTop,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    });
+                });
+
+                // Back to top button
+                const backToTop = document.getElementById('backToTop');
+                if (backToTop) {
+                    window.addEventListener('scroll', () => {
+                        if (window.scrollY > 300) {
+                            backToTop.classList.add('show');
+                        } else {
+                            backToTop.classList.remove('show');
+                        }
+                    });
+
+                    backToTop.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+
+                // Download functionality
+                const downloadBtn = document.getElementById('downloadHTMLBtn');
+                if (downloadBtn) {
+                    downloadBtn.addEventListener('click', () => {
+                        this.downloadPortfolio();
+                    });
+                }
+
+                // Contact form
+                const contactForm = document.querySelector('.contact-form form');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        alert('Thank you for your message! This is a demo form.');
+                    });
+                }
+            }
+
+            downloadPortfolio() {
+                try {
+                    // Clone the current document
+                    const docClone = document.cloneNode(true);
+                    
+                    // Remove the edit and download buttons from the clone
+                    const buttonsToRemove = docClone.querySelectorAll('.footer-actions');
+                    buttonsToRemove.forEach(btn => btn.remove());
+                    
+                    // Get the complete HTML
+                    const htmlContent = '<!DOCTYPE html>\n' + docClone.documentElement.outerHTML;
+                    
+                    // Create and trigger download
+                    const blob = new Blob([htmlContent], { type: 'text/html' });
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    
+                    const portfolioName = this.portfolioData?.personal?.name || 'Portfolio';
+                    link.download = `${portfolioName.replace(/\s+/g, '_')}_Bootstrap_Portfolio.html`;
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                    
+                    // Show success message
+                    this.showSuccessMessage('Portfolio downloaded successfully!');
+                } catch (error) {
+                    console.error('Download error:', error);
+                    alert('Error downloading portfolio. Please try again.');
+                }
+            }
+
+            showSuccessMessage(message) {
+                const successDiv = document.createElement('div');
+                successDiv.className = 'alert alert-success position-fixed';
+                successDiv.style.cssText = `
+                    top: 20px;
+                    right: 20px;
+                    z-index: 9999;
+                    min-width: 250px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                `;
+                successDiv.innerHTML = `
+                    <i class="fas fa-check-circle me-2"></i>${message}
+                `;
+                document.body.appendChild(successDiv);
+                
+                setTimeout(() => {
+                    successDiv.remove();
+                }, 3000);
+            }
+        }
+
+        // Initialize the portfolio preview
+        document.addEventListener('DOMContentLoaded', () => {
+            new PortfolioPreview3();
+        });
+    </script>
+</body>
+</html>

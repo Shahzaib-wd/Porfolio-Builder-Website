@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --yellow: #FFD700;
+            --dark-gray: #1a1a1a;
+            --light-gray: #333333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--yellow);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--yellow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            position: relative;
+        }
+
+        .hero-badge {
+            background: var(--yellow);
+            color: var(--black);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--yellow);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .btn-primary:hover {
+            background: #ffed4a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--yellow);
+        }
+
+        .btn-secondary:hover {
+            background: var(--yellow);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            background: var(--yellow);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 30px;
+            right: 30px;
+        }
+
+        .shape-2 {
+            width: 120px;
+            height: 120px;
+            bottom: 30px;
+            left: 30px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--yellow);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: var(--dark-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+            border-color: var(--yellow);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--yellow);
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .skill-level {
+            height: 6px;
+            background: var(--light-gray);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--yellow);
+            border-radius: 3px;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--dark-gray);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--yellow);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--yellow);
+        }
+
+        .project-description {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--yellow);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--yellow);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            color: var(--yellow);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-text p {
+            color: #ccc;
+        }
+
+        .contact-form {
+            background: var(--dark-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--yellow);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--light-gray);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 5px;
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--yellow);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #ffed4a;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .footer p {
+            color: #ccc;
+            margin: 0;
+        }
+
+        .footer-actions {
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-actions .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .download-btn {
+            background: var(--yellow);
+            color: var(--black);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn:hover {
+            background: #e6c200;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo" id="navLogo">Portfolio</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge" id="heroRole">Loading...</div>
+                    <h1 class="hero-title">
+                        I'm <span id="userName">Your Name</span>
+                    </h1>
+                    <p class="hero-subtitle" id="heroDescription">Loading your professional description...</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img id="profileImage" src="https://via.placeholder.com/400x400?text=Your+Photo" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p id="aboutDescription">Loading your about information...</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number" id="experienceYears">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="projectCount">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img id="aboutImage" src="https://via.placeholder.com/400x400?text=About+Image" alt="About Me">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid" id="skillsContainer">
+                <!-- Skills will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid" id="projectsContainer">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p id="userEmail">your.email@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p id="userPhone">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-actions">
+                <button class="btn btn-primary" onclick="window.location.href='buildnow.html'">
+                    <i class="fas fa-edit"></i> Edit Portfolio
+                </button>
+                <button class="download-btn" type="button" id="downloadHTMLBtn">
+                    <i class="fas fa-download"></i> Download Portfolio
+                </button>
+            </div>
+            <p>&copy; 2025 <span id="copyrightName">Your Name</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        class PortfolioPreview2 {
+            constructor() {
+                this.portfolioData = null;
+                this.templateNumber = 2;
+                this.init();
+            }
+
+            init() {
+                this.loadPortfolioData();
+                this.renderPortfolio();
+                this.setupEventListeners();
+            }
+
+            loadPortfolioData() {
+                try {
+                    const data = localStorage.getItem('portfolioData');
+                    this.portfolioData = data ? JSON.parse(data) : null;
+                    
+                    if (!this.portfolioData) {
+                        this.showError();
+                        return;
+                    }
+                } catch (error) {
+                    console.error('Error loading portfolio data:', error);
+                    this.showError();
+                }
+            }
+
+            showError() {
+                const errorMessage = document.createElement('div');
+                errorMessage.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--dark-gray);
+                    color: var(--white);
+                    padding: 2rem;
+                    border-radius: 10px;
+                    text-align: center;
+                    z-index: 9999;
+                    border: 2px solid var(--yellow);
+                `;
+                errorMessage.innerHTML = `
+                    <h3 style="color: var(--yellow); margin-bottom: 1rem;">No Portfolio Data Found</h3>
+                    <p style="margin-bottom: 1.5rem;">Please build your portfolio first.</p>
+                    <button onclick="window.location.href='buildnow.html'" class="btn btn-primary">
+                        Build Portfolio
+                    </button>
+                `;
+                document.body.appendChild(errorMessage);
+            }
+
+            renderPortfolio() {
+                if (!this.portfolioData) return;
+
+                this.renderPersonalInfo();
+                this.renderSkills();
+                this.renderProjects();
+                this.renderContactInfo();
+            }
+
+            renderPersonalInfo() {
+                const { personal } = this.portfolioData;
+                
+                // Update name elements
+                const nameElements = ['#userName', '#navLogo', '#copyrightName'];
+                nameElements.forEach(selector => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        if (selector === '#navLogo') {
+                            element.textContent = `${personal.name}.`;
+                        } else {
+                            element.textContent = personal.name || 'Your Name';
+                        }
+                    }
+                });
+
+                // Update role
+                const roleElement = document.querySelector('#heroRole');
+                if (roleElement) {
+                    roleElement.textContent = personal.role || 'Professional';
+                }
+
+                // Update descriptions
+                const heroDesc = document.querySelector('#heroDescription');
+                if (heroDesc) {
+                    heroDesc.textContent = `I'm a passionate ${personal.role} with ${personal.experience}+ years of experience creating amazing digital experiences.`;
+                }
+
+                const aboutDesc = document.querySelector('#aboutDescription');
+                if (aboutDesc) {
+                    aboutDesc.textContent = `I'm a dedicated ${personal.role} with ${personal.experience} years of experience in creating innovative solutions. I love working with cutting-edge technologies and delivering high-quality projects that make a real impact.`;
+                }
+
+                // Update experience years
+                const experienceElement = document.querySelector('#experienceYears');
+                if (experienceElement) {
+                    experienceElement.textContent = personal.experience || '0';
+                }
+
+                // Update project count
+                const projectCountElement = document.querySelector('#projectCount');
+                if (projectCountElement) {
+                    projectCountElement.textContent = this.portfolioData.projects.length;
+                }
+
+                // Update profile images
+                const profileImages = ['#profileImage', '#aboutImage'];
+                profileImages.forEach(selector => {
+                    const element = document.querySelector(selector);
+                    if (element && personal.profileImage) {
+                        element.src = personal.profileImage;
+                        element.alt = `${personal.name} - Profile Picture`;
+                    }
+                });
+
+                // Update page title
+                document.title = `${personal.name} - ${personal.role}`;
+            }
+
+            renderContactInfo() {
+                const { personal } = this.portfolioData;
+                
+                const emailElement = document.querySelector('#userEmail');
+                if (emailElement) {
+                    emailElement.textContent = personal.email || 'your.email@example.com';
+                }
+                
+                const phoneElement = document.querySelector('#userPhone');
+                if (phoneElement) {
+                    phoneElement.textContent = personal.phone || '+1 (555) 123-4567';
+                }
+            }
+
+            renderSkills() {
+                const skillsContainer = document.querySelector('#skillsContainer');
+                if (!skillsContainer) return;
+
+                const skillsString = this.portfolioData.personal.skills || '';
+                const uniqueSkills = skillsString
+                    .split(',')
+                    .map(skill => skill.trim())
+                    .filter(skill => skill);
+
+                // Skill icons mapping
+                const skillIcons = {
+                    'react': 'fab fa-react',
+                    'vue': 'fab fa-vuejs',
+                    'angular': 'fab fa-angular',
+                    'javascript': 'fab fa-js-square',
+                    'typescript': 'fab fa-js-square',
+                    'node.js': 'fab fa-node-js',
+                    'nodejs': 'fab fa-node-js',
+                    'python': 'fab fa-python',
+                    'java': 'fab fa-java',
+                    'php': 'fab fa-php',
+                    'html': 'fab fa-html5',
+                    'html5': 'fab fa-html5',
+                    'css': 'fab fa-css3-alt',
+                    'css3': 'fab fa-css3-alt',
+                    'sass': 'fab fa-sass',
+                    'bootstrap': 'fab fa-bootstrap',
+                    'mysql': 'fas fa-database',
+                    'mongodb': 'fas fa-database',
+                    'postgresql': 'fas fa-database',
+                    'git': 'fab fa-git-alt',
+                    'github': 'fab fa-github',
+                    'docker': 'fab fa-docker',
+                    'aws': 'fab fa-aws',
+                    'firebase': 'fas fa-fire',
+                    'figma': 'fab fa-figma',
+                    'photoshop': 'fas fa-paint-brush',
+                    'illustrator': 'fas fa-palette'
+                };
+
+                const skillsHTML = uniqueSkills.map(skill => {
+                    const skillLower = skill.toLowerCase();
+                    const icon = skillIcons[skillLower] || 'fas fa-code';
+                    
+                    return `
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="${icon}"></i>
+                            </div>
+                            <div class="skill-name">${skill}</div>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: ${Math.floor(Math.random() * 30) + 70}%"></div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                skillsContainer.innerHTML = skillsHTML;
+            }
+
+            renderProjects() {
+                const projectsContainer = document.querySelector('#projectsContainer');
+                if (!projectsContainer) return;
+
+                const projectsHTML = this.portfolioData.projects.map(project => {
+                    const techBadges = project.tags
+                        .split(',')
+                        .map(tech => tech.trim())
+                        .filter(tech => tech)
+                        .map(tech => `<span class="project-tag">${tech}</span>`)
+                        .join('');
+
+                    return `
+                        <div class="project-card">
+                            <img src="${project.image}" alt="${project.title}" class="project-image">
+                            <div class="project-content">
+                                <h3 class="project-title">${project.title}</h3>
+                                <p class="project-description">${project.description}</p>
+                                <div class="project-tags">
+                                    ${techBadges}
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link">View Project</a>
+                                    <a href="#" class="project-link">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                projectsContainer.innerHTML = projectsHTML;
+            }
+
+            setupEventListeners() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        if (href && href !== '#') {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                                window.scrollTo({
+                                    top: offsetTop,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    });
+                });
+
+                // Download functionality
+                const downloadBtn = document.getElementById('downloadHTMLBtn');
+                if (downloadBtn) {
+                    downloadBtn.addEventListener('click', () => {
+                        this.downloadPortfolio();
+                    });
+                }
+
+                // Contact form
+                const contactForm = document.querySelector('.contact-form form');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        alert('Thank you for your message! This is a demo form.');
+                    });
+                }
+            }
+
+            downloadPortfolio() {
+                try {
+                    // Clone the current document
+                    const docClone = document.cloneNode(true);
+                    
+                    // Remove the edit and download buttons from the clone
+                    const buttonsToRemove = docClone.querySelectorAll('.footer-actions');
+                    buttonsToRemove.forEach(btn => btn.remove());
+                    
+                    // Get the complete HTML
+                    const htmlContent = '<!DOCTYPE html>\n' + docClone.documentElement.outerHTML;
+                    
+                    // Create and trigger download
+                    const blob = new Blob([htmlContent], { type: 'text/html' });
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    
+                    const portfolioName = this.portfolioData?.personal?.name || 'Portfolio';
+                    link.download = `${portfolioName.replace(/\s+/g, '_')}_Dark_Portfolio.html`;
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                    
+                    // Show success message
+                    this.showSuccessMessage('Portfolio downloaded successfully!');
+                } catch (error) {
+                    console.error('Download error:', error);
+                    alert('Error downloading portfolio. Please try again.');
+                }
+            }
+
+            showSuccessMessage(message) {
+                const successDiv = document.createElement('div');
+                successDiv.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: var(--yellow);
+                    color: var(--black);
+                    padding: 1rem 1.5rem;
+                    border-radius: 5px;
+                    z-index: 9999;
+                    font-weight: 600;
+                    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+                `;
+                successDiv.textContent = message;
+                document.body.appendChild(successDiv);
+                
+                setTimeout(() => {
+                    successDiv.remove();
+                }, 3000);
+            }
+        }
+
+        // Initialize the portfolio preview
+        document.addEventListener('DOMContentLoaded', () => {
+            new PortfolioPreview2();
+        });
+    </script>
+</body>
+</html>
