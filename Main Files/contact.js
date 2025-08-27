@@ -134,3 +134,28 @@ window.onscroll = function () {
     scrollBtn.style.display = "none";
   }
 };
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("subscribeForm");
+  const input = document.getElementById("emailInput");
+  const errorMsg = document.getElementById("errorMsg");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const email = input.value.trim();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "" || !regex.test(email)) {
+      // Shake animation (add a class in CSS)
+      input.classList.add("shake");
+      errorMsg.textContent = "Please enter a valid email";
+      setTimeout(() => input.classList.remove("shake"), 500);
+    } else {
+      errorMsg.textContent = "";
+      alert(`Subscribed successfully: ${email}`);
+      input.value = "";
+    }
+  });
+});
