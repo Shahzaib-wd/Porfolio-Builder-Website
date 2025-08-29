@@ -865,6 +865,7 @@ nav .navbar-toggler{
   background-color: #0056b3;    
   transform: scale(1.1);
 }
+/* Enhanced Footer */
 .footer {
   background: linear-gradient(180deg, #0a0a0a 0%, #160021 100%);
   padding: 60px 20px 5px;

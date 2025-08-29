@@ -451,6 +451,44 @@ window.onscroll = function () {
   });
 
 
+  document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("subscribeForm");
+  const input = document.getElementById("emailInput");
+  const errorMsg = document.getElementById("errorMsg");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const email = input.value.trim();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    errorMsg.textContent = "";
+    errorMsg.classList.remove("show"); // reset animation
+
+    if (email === "" || !regex.test(email)) {
+      // Input shake
+      input.classList.add("shake");
+      setTimeout(() => input.classList.remove("shake"), 400);
+
+      // Error message animate
+      errorMsg.textContent = "Please enter a valid email";
+      void errorMsg.offsetWidth; // reflow trick to restart animation
+      errorMsg.classList.add("show");
+
+    } else {
+      // Success message animate
+      errorMsg.textContent = "Subscribed successfully ✅";
+      errorMsg.style.color = "green";
+      void errorMsg.offsetWidth; 
+      errorMsg.classList.add("show");
+
+      input.value = "";
+    }
+  });
+});
+
+
+
 </script>
 
 
