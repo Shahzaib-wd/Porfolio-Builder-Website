@@ -45,30 +45,7 @@
     document.getElementById("contactForm").reset();
     }
   });
-  //-Scroll bottom to top hai ye dhaccan->
-//   const scrollBtn = document.getElementById("scrollBtn");
-// window.onscroll = () => {
-//   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-//     scrollBtn.style.display = "block";
-//   } else {
-//     scrollBtn.style.display = "none";
-//   }
-// };
 
-// function scrollToTop() {
-//   window.scrollTo({ top: 0, behavior: 'smooth' });
-// }
-// function showCustomToast() {
-//   const toast = document.getElementById("customSuccessToast");
-//   toast.classList.remove("toast-hide");
-//   toast.classList.add("toast-show");
-
-//   setTimeout(() => {
-//     toast.classList.remove("toast-show");
-//     toast.classList.add("toast-hide");
-//   }, 5000);
-// }
-// JS me ye function dalein
 
 function showCustomToast() {
   const toast = document.getElementById("customSuccessToast");
@@ -136,26 +113,23 @@ window.onscroll = function () {
 };
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("subscribeForm");
-  const input = document.getElementById("emailInput");
-  const errorMsg = document.getElementById("errorMsg");
+  document.getElementById("subscribeForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop page reload 🚫
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    let emailInput = document.getElementById("emailInput");
+    let errorMsg = document.getElementById("errorMsg");
+    let email = emailInput.value.trim();
 
-    const email = input.value.trim();
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // reset msg
+    errorMsg.textContent = "";
 
-    if (email === "" || !regex.test(email)) {
-      // Shake animation (add a class in CSS)
-      input.classList.add("shake");
-      errorMsg.textContent = "Please enter a valid email";
-      setTimeout(() => input.classList.remove("shake"), 500);
+    // simple validation
+    if (email === "" || !/^\S+@\S+\.\S+$/.test(email)) {
+      errorMsg.textContent = "⚠️ Please enter a valid email!";
+      errorMsg.style.color = "#ff4d6d"; // red
     } else {
-      errorMsg.textContent = "";
-      alert(`Subscribed successfully: ${email}`);
-      input.value = "";
+      errorMsg.textContent = "🎉 Subscribed successfully!";
+      errorMsg.style.color = "#4dff91"; // green
+      emailInput.value = "";
     }
   });
-});
